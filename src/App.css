@@ -1,3 +1,33 @@
-.App {
+* {
   text-align: center;
+  background-color: #e6e6e6;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  flex-basis: auto;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem 3rem 0 3rem;
+}
+
+.header>.header-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header>.header-links>a {
+  margin-left: 18px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+
+.footer {
+  height: 50px;
+  margin-top: 550px;
+  flex-shrink: 0;
 }

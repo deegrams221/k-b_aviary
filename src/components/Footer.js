@@ -1,10 +1,13 @@
-import Icon from '@material-ui/core/Icon';
-import react from React;
+import React from 'react';
 
-
-export default function Header() {
-
-  return(
-    <Icon color="secondary">star</Icon>
+export default function Footer() {
+  return (
+    <footer class='footer'>
+      <img
+        src={require('../images/logo.jpg')}
+        alt='K & B Aviary Logo'
+        width='275px'
+      />
+    </footer>
   );
 }

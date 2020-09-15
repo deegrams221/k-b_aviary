@@ -1,12 +1,17 @@
 import CssBaseline from '@material-ui/core/CssBaseline';
-import 'fontsource-roboto';
 import React from 'react';
+import Content from '../src/components/Content';
+import Footer from '../src/components/Footer';
+import Header from '../src/components/Header';
+import './App.css';
 
-export default function MyApp() {
+export default function App() {
   return (
     <React.Fragment>
       <CssBaseline />
-      {/* The rest of your application */}
+      <Header />
+      <Content />
+      <Footer />
     </React.Fragment>
   );
 }
