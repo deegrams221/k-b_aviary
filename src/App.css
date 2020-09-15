@@ -25,9 +25,19 @@
   font-size: 18px;
 }
 
+.content>p {
+  font-size: 25px;
+  max-width: 373px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.content>img {
+  border: 2px solid #2f553e;
+}
 
 .footer {
   height: 50px;
-  margin-top: 550px;
+  margin-top: 5em;
   flex-shrink: 0;
 }
