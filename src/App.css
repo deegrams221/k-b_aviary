@@ -28,16 +28,122 @@
 .content>p {
   font-size: 25px;
   max-width: 373px;
-  margin: 0 auto;
-  margin-bottom: 20px;
+  margin: 30px auto;
 }
 
 .content>img {
+  border: 2px dashed #2f553e;
+}
+
+.content>.container {
+  border: 2px dashed #2f553e;
+  max-width: 575px;
+  margin: 0 auto;
+  background-color: #ffffff;
+}
+
+.content>.container>p {
+  background-color: #ffffff;
+  font-weight: bolder;
+}
+
+.content>.container>.subcontainer {
+  max-width: 450px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.content>.container>.subcontainer>button {
   border: 2px solid #2f553e;
+  background-color: #ffffff;
+  color: #2f553e;
+  font-weight: bolder;
+  margin: 20px auto;
+  border-radius: 5px;
+}
+
+.content>.container>.subcontainer>.content-one {
+  background-color: #ffffff;
+  max-width: 160px;
+  margin: 30px;
+}
+
+.content>.container>.subcontainer>.content-one>h2,
+h3 {
+  background-color: #ffffff;
+}
+
+.content>.container>.subcontainer>.content-two {
+  background-color: #ffffff;
+  max-width: 160px;
+  margin: 30px;
+}
+
+.content>.container>.subcontainer>.content-two>h2,
+h3 {
+  background-color: #ffffff;
+}
+
+.content>.container>.subcontainer>.content-three {
+  background-color: #ffffff;
+  max-width: 160px;
+  margin: 30px;
+}
+
+.content>.container>.subcontainer>.content-three>h2,
+h3 {
+  background-color: #ffffff;
+}
+
+.content>.container>.subcontainer>.content-four {
+  background-color: #ffffff;
+  max-width: 160px;
+  margin: 30px;
+}
+
+.content>.container>.subcontainer>.content-four>h2,
+h3 {
+  background-color: #ffffff;
+}
+
+.content>.container-two {
+  margin: 40px auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 770px;
+}
+
+.content>.container-two>.one,
+.two,
+.three,
+.four,
+.five,
+.six,
+.seven,
+.eight {
+  min-width: 345px;
+  max-width: 345px;
+  margin: 0 20px;
+}
+
+.content>.container-two>.two>p,
+.six>p {
+  text-align: left;
+}
+
+.content>.container-two>.three>p,
+.four>p,
+.seven>p {
+  text-align: right;
 }
 
 .footer {
   height: 50px;
   margin-top: 5em;
   flex-shrink: 0;
+  border-top: #2f553e solid 2px;
 }
