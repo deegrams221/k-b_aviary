@@ -1,6 +1,25 @@
+import {
+  Button,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+  TextField,
+} from '@material-ui/core';
 import React from 'react';
 
 export default function Content() {
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   return (
     <div className='content'>
       <p>Small hobby breeder of cockatiels and green cheek conures</p>
@@ -46,7 +65,65 @@ export default function Content() {
               elit
             </h3>
           </div>
-          <button>CONTACT</button>
+
+          <div className='contact-btn'>
+            <Button
+              className='button'
+              variant='outlined'
+              color='default'
+              onClick={handleClickOpen}
+            >
+              CONTACT US
+            </Button>
+            <Dialog
+              open={open}
+              onClose={handleClose}
+              aria-labelledby='form-dialog-title'
+            >
+              <DialogTitle id='form-dialog-title'>CONTACT US</DialogTitle>
+              <DialogContent>
+                <DialogContentText>
+                  Enter your name, email, and a quick message.
+                </DialogContentText>
+                <DialogContentText>
+                  We will contact you shortly.
+                </DialogContentText>
+                <TextField
+                  autoFocus
+                  margin='dense'
+                  id='name'
+                  label='Name'
+                  type='text'
+                  placeholder='Enter Name Here'
+                  fullWidth
+                />
+                <TextField
+                  margin='dense'
+                  id='name'
+                  label='Email Address'
+                  type='email'
+                  placeholder='Enter Email Here'
+                  fullWidth
+                />
+                <TextField
+                  margin='dense'
+                  id='message'
+                  label='Message'
+                  type='text'
+                  placeholder='Enter Message Here'
+                  fullWidth
+                />
+              </DialogContent>
+              <DialogActions>
+                <Button onClick={handleClose} color='default'>
+                  Cancel
+                </Button>
+                <Button onClick={handleClose} color='default'>
+                  Submit
+                </Button>
+              </DialogActions>
+            </Dialog>
+          </div>
         </div>
       </div>
       <div className='container-two'>
