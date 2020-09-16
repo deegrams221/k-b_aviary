@@ -25,7 +25,7 @@ export default function Form() {
       <Button
         className='button'
         color='default'
-        variant='outlined'
+        variant='contained'
         onClick={handleClickOpen}
       >
         CONTACT US

@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <div className='footer'>
       <img
-        src={require('../images/logo.jpg')}
+        src={require('../images/logo3.jpg')}
         alt='K & B Aviary Logo'
         width='250px'
       />
