@@ -66,14 +66,9 @@ export default function Footer() {
         </a>
       </div>
       <div className='footer-info'>
-        <p>
-          Incididunt ea aute esse nulla. Labore nostrud id anim esse culpa
-          proident culpa incididunt duis ex aliquip ullamco. Nulla enim sit qui
-          incididunt irure commodo laborum proident nostrud.{' '}
-        </p>
+        <p>small hobby breeder of cockatiels and green cheek conures</p>
       </div>
       <div className='footer-contact'>
-        {/* <p>Get in Touch</p> */}
         <div className='contact-btn'>
           <Button className='button' color='default' onClick={handleClickOpen}>
             Get in Touch
