@@ -141,6 +141,12 @@ h3 {
   text-align: right;
 }
 
+.content>.container-three>p {
+  margin: 0 auto;
+  margin-top: 25px;
+  max-width: 504px;
+}
+
 .footer {
   height: 50px;
   margin-top: 5em;
