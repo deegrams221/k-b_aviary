@@ -148,8 +148,40 @@ h3 {
 }
 
 .footer {
-  height: 50px;
+  height: 150px;
   margin-top: 5em;
   flex-shrink: 0;
   border-top: #2f553e solid 2px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  flex-basis: auto;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 1em;
+}
+
+.footer>.footer-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer>.footer-links>a {
+  margin-left: 18px;
+}
+
+.footer>.footer-info {
+  max-width: 400px;
+}
+
+.footer>.footer-contact {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer>.footer-contact>p {
+  padding: 0;
+  margin: 0 auto;
+  max-width: 100px;
 }
