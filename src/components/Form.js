@@ -72,7 +72,7 @@ export default function Form() {
                   name='email'
                   label='Email Address'
                   type='email'
-                  placeholder='Enter a Valid Email Here'
+                  placeholder='Enter Valid Email Here'
                   required
                 />
               </div>
