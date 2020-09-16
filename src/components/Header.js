@@ -9,10 +9,11 @@ export default function Header() {
         width='250px'
       />
       <div className='header-links'>
-        <a id='about'>ABOUT</a>
+        {/* <a id='about'>ABOUT</a> */}
         {/* Twitter */}
         <a
           target='_blank'
+          rel='noopener noreferrer'
           title='follow me on Twitter'
           href='https://www.twitter.com/PLACEHOLDER'
         >
@@ -24,6 +25,7 @@ export default function Header() {
         {/* Facebook */}
         <a
           target='_blank'
+          rel='noopener noreferrer'
           title='follow me on facebook'
           href='https://www.facebook.com/PLACEHOLDER'
         >
@@ -35,6 +37,7 @@ export default function Header() {
         {/* Instagram */}
         <a
           target='_blank'
+          rel='noopener noreferrer'
           title='follow me on instagram'
           href='https://www.instagram.com/PLACEHOLDER'
         >

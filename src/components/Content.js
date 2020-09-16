@@ -119,6 +119,7 @@ export default function Content() {
       <div className='container-three'>
         <h2>Video Title</h2>
         <iframe
+          title='video'
           width='575'
           height='315'
           src='https://www.youtube.com/embed/tgbNymZ7vqY'

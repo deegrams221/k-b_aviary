@@ -12,6 +12,7 @@ export default function Footer() {
         {/* Twitter */}
         <a
           target='_blank'
+          rel='noopener noreferrer'
           title='follow me on Twitter'
           href='https://www.twitter.com/PLACEHOLDER'
         >
@@ -23,6 +24,7 @@ export default function Footer() {
         {/* Facebook */}
         <a
           target='_blank'
+          rel='noopener noreferrer'
           title='follow me on facebook'
           href='https://www.facebook.com/PLACEHOLDER'
         >
@@ -34,6 +36,7 @@ export default function Footer() {
         {/* Instagram */}
         <a
           target='_blank'
+          rel='noopener noreferrer'
           title='follow me on instagram'
           href='https://www.instagram.com/PLACEHOLDER'
         >
