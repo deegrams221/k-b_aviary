@@ -8,7 +8,6 @@ export default function Content() {
       <img
         src={require('../images/placeholder-images-image_large.webp')}
         alt='K & B Aviary Logo'
-        width='575px'
       />
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -127,6 +126,7 @@ export default function Content() {
       <div className='container-three'>
         <h2>Video Title</h2>
         <iframe
+          className='iframe'
           title='video'
           width='575'
           height='315'
