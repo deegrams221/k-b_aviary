@@ -117,7 +117,7 @@ export default function Content() {
                         name='email'
                         label='Email Address'
                         type='email'
-                        placeholder='Enter Email Here'
+                        placeholder='Enter a Valid Email Here'
                         required
                       />
                     </div>
