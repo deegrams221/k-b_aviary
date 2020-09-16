@@ -18,13 +18,13 @@ body,
   margin: 2rem 3rem 0 3rem;
 }
 
-.header>.header-links {
+.links {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.header>.header-links>a {
+.links>a {
   margin-left: 18px;
   font-weight: bold;
   font-size: 18px;
@@ -157,16 +157,6 @@ h3 {
   justify-content: space-between;
   align-items: center;
   padding-right: 1em;
-}
-
-.footer>.footer-links {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.footer>.footer-links>a {
-  margin-left: 18px;
 }
 
 .footer>.footer-info {
