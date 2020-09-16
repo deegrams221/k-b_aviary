@@ -17,7 +17,11 @@ export default function Content() {
         labore et dolore magna aliqua
       </p>
       <div className='container'>
-        <p>WHAT YOU DO</p>
+        <img
+          src={require('../images/logo1.jpg')}
+          alt='K & B Aviary Logo'
+          width='200px'
+        />
         <div className='subcontainer'>
           <div className='content-one'>
             <h2>INFO TITLE</h2>
