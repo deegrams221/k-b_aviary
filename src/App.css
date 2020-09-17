@@ -166,14 +166,7 @@ h3 {
 }
 
 .footer>.footer-contact {
-  display: flex;
-  flex-direction: column;
-}
-
-.footer>.footer-contact>p {
-  padding: 0;
-  margin: 0 auto;
-  max-width: 100px;
+  margin-right: 35px;
 }
 
 
