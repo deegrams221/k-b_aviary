@@ -6,7 +6,8 @@ Find the deployed project at https://k-b-aviary.netlify.app/
  [GitHub](https://github.com/deegrams221) | [LinkedIn](https://www.linkedin.com/in/diana-grams/) | [Portfolio](https://dianagrams.dev/)
 
 ![React](https://img.shields.io/badge/react-v16.13.1-blue.svg)
-[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+[![code style](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat)](https://github.com/prettier/prettier)
+![netlify](https://img.shields.io/netlify/60ed14aa-ffc4-4ac0-9f41-c1b60e097554)
 
 ## Project Overview
 This site was built for a bird breeder with the intention to showcase her birds and provide an easy way for potential clients to contact her.
