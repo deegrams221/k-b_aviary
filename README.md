@@ -27,9 +27,6 @@ Deployed using `Netlify`
 - Client Contact Form
 - Client Business Information (with imgaes and video)
 
-#### License:
-Using an MIT License MIT © Diana Grams
-
 
 # Installation Instructions
 
