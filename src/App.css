@@ -217,10 +217,16 @@ h3 {
   }
 
   .content>.container>.subcontainer>.content-one,
-  .content-two,
-  .content-three,
-  .content-four {
+  .content-two {
     margin: 0 auto;
+  }
+
+  .content>.container>.subcontainer>.content-three {
+    margin: 0;
+  }
+
+  .content>.container>.subcontainer>.content-four {
+    margin: 0 0 20px 0;
   }
 
   .content>.container-two {
@@ -239,19 +245,13 @@ h3 {
   }
 
   .content>.container-two>.two>p,
-  .six>p {
-    text-align: center;
-    max-width: 300px;
-    margin: 10px auto;
-  }
-
-  .content>.container-two>.three>p,
+  .six>p,
+  .three>p,
   .four>p,
   .seven>p {
-    text-align: center;
-    max-width: 300px;
-    margin: 10px auto;
+    display: none;
   }
+
 
   .content>.container-two>.one>img,
   .four>img,
