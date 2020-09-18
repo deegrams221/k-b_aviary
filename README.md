@@ -1,3 +1,43 @@
+# K & B Aviary
+
+You can find the deployed project at https://k-b-aviary.netlify.app/
+
+## Diana Grams
+ [GitHub](https://github.com/deegrams221) | [LinkedIn](https://www.linkedin.com/in/diana-grams/) | [Portfolio](https://dianagrams.dev/)
+
+![MIT](https://img.shields.io/packagist/l/doctrine/orm.svg)
+![React](https://img.shields.io/badge/react-v16.13.1-blue.svg)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+
+## Project Overview
+This site was built for a bird breeder with the intention to showcase her birds and provide an easy way for potential clients to contact her.
+<br>
+
+### Current version: 1.0
+
+### Future Version Plans: 
+In the future, the client would like to have a login, once logged in the client will be able to upload images and descriptions of the birds they have available for purchase. Users will be able to view the birds in a new page but will not be able to login. Also plan to create a backend in Firebase, so the client can easily upload and maintain the artifacts.
+
+### Technology Used:
+React.js | JavaScript | Material-UI | CSS
+<br>
+Deployed using `Netlify`
+
+### Key Features
+- Client Contact Form
+- Client Business Information (with imgaes and video)
+
+#### License:
+Using an MIT License MIT © Diana Grams
+
+
+# Installation Instructions
+
+- Clone this repo
+- yarn install to install all required dependencies
+- yarn server to start the local server
+- yarn test to start server using testing environment
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
