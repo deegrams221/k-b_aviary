@@ -16,8 +16,8 @@ This site was built for a bird breeder with the intention to showcase her birds 
 
 ### Current version: 1.0
 
-### Future Version Plans: 
-In the future, the client would like to have a login, once logged in the client will be able to upload images and descriptions of the birds they have available for purchase. Users will be able to view the birds in a new page but will not be able to login. Also plan to create a backend in Firebase, so the client can easily upload and maintain the artifacts.
+### Plan for version 2.0: 
+The client would like to have a login, once logged in the client will be able to upload images and descriptions of the birds they have available for purchase in an 'inventory' page. Users will be able to view the inventory but will not be able to login. Also plan to create a backend in Firebase, so the client can easily upload and maintain the artifacts.
 
 ### Technology Used:
 React.js | JavaScript | Material-UI | CSS
