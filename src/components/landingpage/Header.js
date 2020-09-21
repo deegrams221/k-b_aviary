@@ -5,7 +5,7 @@ export default function Header() {
   return (
     <div className='header'>
       <img
-        src={require('../images/logo.jpg')}
+        src={require('../../images/logo.jpg')}
         alt='K & B Aviary Logo'
         width='250px'
       />

@@ -1,12 +1,12 @@
 import React from 'react';
-import Form from './Form';
+import ContactForm from './ContactForm';
 
 export default function Content() {
   return (
     <div className='content'>
       <p>Small hobby breeder of cockatiels and green cheek conures</p>
       <img
-        src={require('../images/placeholder-images-image_large.webp')}
+        src={require('../../images/placeholder-images-image_large.webp')}
         alt='K & B Aviary Logo'
       />
       <p>
@@ -17,7 +17,7 @@ export default function Content() {
       </p>
       <div className='container'>
         <img
-          src={require('../images/logo1.jpg')}
+          src={require('../../images/logo1.jpg')}
           alt='K & B Aviary Logo'
           width='200px'
         />
@@ -52,14 +52,14 @@ export default function Content() {
           </div>
 
           <div className='contact-button'>
-            <Form />
+            <ContactForm />
           </div>
         </div>
       </div>
       <div className='container-two'>
         <div className='one'>
           <img
-            src={require('../images/placeholder-images-image_large.webp')}
+            src={require('../../images/placeholder-images-image_large.webp')}
             alt='K & B Aviary Logo'
             width='345px'
             height='168px'
@@ -83,7 +83,7 @@ export default function Content() {
         </div>
         <div className='four'>
           <img
-            src={require('../images/placeholder-images-image_large.webp')}
+            src={require('../../images/placeholder-images-image_large.webp')}
             alt='K & B Aviary Logo'
             width='345px'
             height='168px'
@@ -92,7 +92,7 @@ export default function Content() {
 
         <div className='five'>
           <img
-            src={require('../images/placeholder-images-image_large.webp')}
+            src={require('../../images/placeholder-images-image_large.webp')}
             alt='K & B Aviary Logo'
             width='345px'
             height='168px'
@@ -116,7 +116,7 @@ export default function Content() {
         </div>
         <div className='eight'>
           <img
-            src={require('../images/placeholder-images-image_large.webp')}
+            src={require('../../images/placeholder-images-image_large.webp')}
             alt='K & B Aviary Logo'
             width='345px'
             height='168px'

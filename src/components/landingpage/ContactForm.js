@@ -9,7 +9,7 @@ import {
 } from '@material-ui/core';
 import React from 'react';
 
-export default function Form() {
+export default function ContactForm() {
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
