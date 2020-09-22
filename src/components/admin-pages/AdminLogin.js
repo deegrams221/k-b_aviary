@@ -54,11 +54,13 @@ export default function AdminLogin() {
                 margin='dense'
                 required
                 // fullWidth
+                className='form-control'
                 id='email'
                 label='Email Address'
                 name='email'
                 autoComplete='email'
                 autoFocus
+                placeholder='Enter Email Here'
               />
             </div>
             <div className='col'>
@@ -67,11 +69,13 @@ export default function AdminLogin() {
                 margin='dense'
                 required
                 // fullWidth
+                className='form-control'
                 name='password'
                 label='Password'
                 type='password'
                 id='password'
                 autoComplete='current-password'
+                placeholder='Enter Password Here'
               />
             </div>
             <div className='col'>
