@@ -9,10 +9,20 @@ import {
   FormControlLabel,
   TextField,
 } from '@material-ui/core';
-import React from 'react';
+import axios from 'axios';
+import { withFormik } from 'formik';
+import React, { useEffect, useState } from 'react';
+import * as Yup from 'yup';
 
-export default function AdminLogin() {
+const AdminLogin = ({ errors, touched, status }) => {
   const [open, setOpen] = React.useState(false);
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    if (status) {
+      setUsers([...users, status]);
+    }
+  }, [status]);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -49,6 +59,9 @@ export default function AdminLogin() {
               </DialogContent>
             </div>
             <div className='col'>
+              {errors.email && touched.email && (
+                <p className='error'>{errors.email}</p>
+              )}
               <TextField
                 // variant='outlined'
                 margin='dense'
@@ -64,6 +77,9 @@ export default function AdminLogin() {
               />
             </div>
             <div className='col'>
+              {errors.password && touched.password && (
+                <p className='error'>{errors.password}</p>
+              )}
               <TextField
                 // variant='outlined'
                 margin='dense'
@@ -103,4 +119,34 @@ export default function AdminLogin() {
       </Dialog>
     </div>
   );
-}
+};
+
+const FormikAdminLogin = withFormik({
+  mapPropsToValues({ name, email, password, tos }) {
+    return {
+      email: email || '',
+      password: password || '',
+    };
+  },
+
+  // Step 2: Validation Schema
+  validationSchema: Yup.object().shape({
+    email: Yup.string().email('Email not valid').required('Email is required'),
+    password: Yup.string()
+      .min(6, 'Password must be at least 6 characters')
+      .required('Password is required'),
+  }),
+
+  handleSubmit(values, { setStatus }) {
+    console.log(values);
+    // Step 3: Post
+    axios
+      .post('https://reqres.in/api/users', values)
+      .then((res) => {
+        setStatus(res.data);
+      })
+      .catch((error) => console.log(error.response));
+  },
+})(AdminLogin);
+
+export default FormikAdminLogin;
