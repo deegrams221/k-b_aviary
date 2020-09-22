@@ -25,7 +25,7 @@ export default function ContactForm() {
       <Button
         className='button'
         color='default'
-        variant='contained'
+        // variant='contained'
         onClick={handleClickOpen}
       >
         CONTACT US

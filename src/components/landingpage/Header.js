@@ -1,4 +1,5 @@
 import React from 'react';
+import ContactForm from './ContactForm';
 import Links from './Links';
 
 export default function Header() {
@@ -10,6 +11,7 @@ export default function Header() {
         width='250px'
       />
       <div className='header-links'>
+        <ContactForm />
         <Links />
       </div>
     </div>
