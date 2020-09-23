@@ -47,25 +47,23 @@ export default function AdminInventoryForm() {
               <div className='col'>
                 <TextField
                   margin='dense'
-                  id='name'
+                  id='breed'
                   type='text'
-                  name='name'
+                  name='breed'
                   className='form-control'
-                  label='Name'
-                  placeholder='Enter Name Here'
-                  required
+                  label='Breed'
+                  placeholder='Enter Breed Here'
                 />
               </div>
               <div className='col'>
                 <TextField
                   margin='dense'
-                  id='email'
+                  id='inventory-number'
                   className='form-control'
-                  name='email'
-                  label='Email Address'
-                  type='email'
-                  placeholder='Enter Valid Email Here'
-                  required
+                  name='inventory-number'
+                  label='Inventory Number'
+                  type='text'
+                  placeholder='Enter Inventory Number Here'
                 />
               </div>
             </div>
@@ -73,13 +71,12 @@ export default function AdminInventoryForm() {
           <div className='form-group'>
             <TextField
               margin='dense'
-              id='message'
+              id='descrpiction'
               className='form-control'
-              name='message'
-              label='Message'
+              name='descrpiction'
+              label='Descrpiction'
               type='text'
-              placeholder='Enter Message Here'
-              required
+              placeholder='Enter Descrpiction Here'
             />
           </div>
           <DialogActions>
