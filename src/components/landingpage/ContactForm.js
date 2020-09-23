@@ -7,10 +7,10 @@ import {
   DialogTitle,
   TextField,
 } from '@material-ui/core';
-import React from 'react';
+import React, { useState } from 'react';
 
 export default function ContactForm() {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -22,12 +22,7 @@ export default function ContactForm() {
 
   return (
     <div className='contact-btn'>
-      <Button
-        className='button'
-        color='default'
-        // variant='contained'
-        onClick={handleClickOpen}
-      >
+      <Button className='button' color='default' onClick={handleClickOpen}>
         CONTACT US
       </Button>
       <Dialog

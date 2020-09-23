@@ -1,4 +1,5 @@
 import React from 'react';
+import AdminInventoryForm from '../admin-pages/AdminInventoryForm';
 import AdminLogin from '../admin-pages/AdminLogin';
 import ContactForm from './ContactForm';
 import Links from './Links';
@@ -23,6 +24,7 @@ export default function Footer() {
         </div>
         <div className='footer-login-btn'>
           <AdminLogin />
+          <AdminInventoryForm />
         </div>
       </div>
     </div>

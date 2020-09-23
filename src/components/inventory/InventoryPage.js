@@ -31,6 +31,7 @@ export default function InventoryPage(props) {
           purchase. If you are interested in any of these birds, please send a
           message with the inventory number.
         </h2>
+
         <ContactForm />
         <div className='content-cards'>
           <InventoryCard />

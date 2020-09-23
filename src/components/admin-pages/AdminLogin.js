@@ -11,11 +11,11 @@ import {
 } from '@material-ui/core';
 import axios from 'axios';
 import { withFormik } from 'formik';
-import React from 'react';
+import React, { useState } from 'react';
 import * as Yup from 'yup';
 
 const AdminLogin = ({ errors, touched, status }) => {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
 
   const handleClickOpen = () => {
     setOpen(true);
