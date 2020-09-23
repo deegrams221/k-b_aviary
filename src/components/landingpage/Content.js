@@ -1,5 +1,4 @@
 import React from 'react';
-import InventoryPage from '../inventory/InventoryPage';
 import ContactForm from './ContactForm';
 
 export default function Content() {
@@ -52,9 +51,6 @@ export default function Content() {
             </h3>
           </div>
           <div className='buttons'>
-            <div className='inventory-button'>
-              <InventoryPage />
-            </div>
             <div className='contact-button'>
               <ContactForm />
             </div>
