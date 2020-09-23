@@ -123,7 +123,7 @@ const FormikAdminLogin = withFormik({
 
   handleSubmit(values, { setStatus }) {
     console.log(values);
-    // Step 3: Post
+    // Post Placeholder
     axios
       .post('https://reqres.in/api/users', values)
       .then((res) => {
