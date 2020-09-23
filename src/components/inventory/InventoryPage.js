@@ -4,8 +4,8 @@ import ContactForm from '../landingpage/ContactForm';
 import InventoryCard from './InventoryCard';
 
 export default function InventoryPage(props) {
-  const [item, setItems] = useState([]);
-  const [open, setOpen] = React.useState(false);
+  // const [item, setItems] = useState([]);
+  const [open, setOpen] = useState(false);
 
   const handleClickOpen = () => {
     setOpen(true);
