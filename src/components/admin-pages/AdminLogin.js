@@ -11,18 +11,11 @@ import {
 } from '@material-ui/core';
 import axios from 'axios';
 import { withFormik } from 'formik';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import * as Yup from 'yup';
 
 const AdminLogin = ({ errors, touched, status }) => {
   const [open, setOpen] = React.useState(false);
-  const [users, setUsers] = useState([]);
-
-  useEffect(() => {
-    if (status) {
-      setUsers([...users, status]);
-    }
-  }, [status]);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -34,12 +27,7 @@ const AdminLogin = ({ errors, touched, status }) => {
 
   return (
     <div className='contact-btn'>
-      <Button
-        className='button'
-        color='default'
-        // variant='contained'
-        onClick={handleClickOpen}
-      >
+      <Button className='button' color='default' onClick={handleClickOpen}>
         ADMIN LOGIN
       </Button>
       <Dialog
@@ -63,10 +51,8 @@ const AdminLogin = ({ errors, touched, status }) => {
                 <p className='error'>{errors.email}</p>
               )}
               <TextField
-                // variant='outlined'
                 margin='dense'
                 required
-                // fullWidth
                 className='form-control'
                 id='email'
                 label='Email Address'
@@ -81,10 +67,8 @@ const AdminLogin = ({ errors, touched, status }) => {
                 <p className='error'>{errors.password}</p>
               )}
               <TextField
-                // variant='outlined'
                 margin='dense'
                 required
-                // fullWidth
                 className='form-control'
                 name='password'
                 label='Password'
@@ -122,14 +106,14 @@ const AdminLogin = ({ errors, touched, status }) => {
 };
 
 const FormikAdminLogin = withFormik({
-  mapPropsToValues({ name, email, password, tos }) {
+  mapPropsToValues({ email, password }) {
     return {
       email: email || '',
       password: password || '',
     };
   },
 
-  // Step 2: Validation Schema
+  // Validation Schema
   validationSchema: Yup.object().shape({
     email: Yup.string().email('Email not valid').required('Email is required'),
     password: Yup.string()
