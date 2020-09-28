@@ -7,11 +7,11 @@ import './App.css';
 
 export default function App() {
   return (
-    <React.Fragment>
+    <>
       <CssBaseline />
       <Header />
       <Content />
       <Footer />
-    </React.Fragment>
+    </>
   );
 }
