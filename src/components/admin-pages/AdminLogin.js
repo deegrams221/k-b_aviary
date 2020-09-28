@@ -26,82 +26,84 @@ const AdminLogin = ({ errors, touched, status }) => {
   };
 
   return (
-    <div className='contact-btn'>
-      <Button className='button' color='default' onClick={handleClickOpen}>
-        ADMIN LOGIN
-      </Button>
-      <Dialog
-        open={open}
-        onClose={handleClose}
-        aria-labelledby='form-dialog-title'
-      >
-        <form noValidate>
-          <div className='form-group'>
-            <div className='form-row'>
-              <DialogTitle id='form-dialog-title'>ADMIN LOGIN</DialogTitle>
-              <DialogContent>
-                <DialogContentText>*ADMIN ONLY.</DialogContentText>
-                <DialogContentText>
-                  GO BACK IF YOU ARE NOT ADMIN.
-                </DialogContentText>
-              </DialogContent>
+    <>
+      <div className='contact-btn'>
+        <Button className='button' color='default' onClick={handleClickOpen}>
+          ADMIN LOGIN
+        </Button>
+        <Dialog
+          open={open}
+          onClose={handleClose}
+          aria-labelledby='form-dialog-title'
+        >
+          <form noValidate>
+            <div className='form-group'>
+              <div className='form-row'>
+                <DialogTitle id='form-dialog-title'>ADMIN LOGIN</DialogTitle>
+                <DialogContent>
+                  <DialogContentText>*ADMIN ONLY.</DialogContentText>
+                  <DialogContentText>
+                    GO BACK IF YOU ARE NOT ADMIN.
+                  </DialogContentText>
+                </DialogContent>
+              </div>
+              <div className='col'>
+                {errors.email && touched.email && (
+                  <p className='error'>{errors.email}</p>
+                )}
+                <TextField
+                  margin='dense'
+                  required
+                  className='form-control'
+                  id='email'
+                  label='Email Address'
+                  name='email'
+                  autoComplete='email'
+                  autoFocus
+                  placeholder='Enter Email Here'
+                />
+              </div>
+              <div className='col'>
+                {errors.password && touched.password && (
+                  <p className='error'>{errors.password}</p>
+                )}
+                <TextField
+                  margin='dense'
+                  required
+                  className='form-control'
+                  name='password'
+                  label='Password'
+                  type='password'
+                  id='password'
+                  autoComplete='current-password'
+                  placeholder='Enter Password Here'
+                />
+              </div>
+              <div className='col'>
+                <FormControlLabel
+                  control={<Checkbox value='remember' color='primary' />}
+                  label='Remember me'
+                />
+              </div>
+              <DialogActions>
+                <Button onClick={handleClose} color='default'>
+                  Cancel
+                </Button>
+                <Button
+                  onClick={handleClose}
+                  color='default'
+                  type='submit'
+                  value='Send Message'
+                  className='btn btn-lg btn-dark btn-block'
+                >
+                  Login
+                </Button>
+              </DialogActions>
             </div>
-            <div className='col'>
-              {errors.email && touched.email && (
-                <p className='error'>{errors.email}</p>
-              )}
-              <TextField
-                margin='dense'
-                required
-                className='form-control'
-                id='email'
-                label='Email Address'
-                name='email'
-                autoComplete='email'
-                autoFocus
-                placeholder='Enter Email Here'
-              />
-            </div>
-            <div className='col'>
-              {errors.password && touched.password && (
-                <p className='error'>{errors.password}</p>
-              )}
-              <TextField
-                margin='dense'
-                required
-                className='form-control'
-                name='password'
-                label='Password'
-                type='password'
-                id='password'
-                autoComplete='current-password'
-                placeholder='Enter Password Here'
-              />
-            </div>
-            <div className='col'>
-              <FormControlLabel
-                control={<Checkbox value='remember' color='primary' />}
-                label='Remember me'
-              />
-            </div>
-            <DialogActions>
-              <Button onClick={handleClose} color='default'>
-                Cancel
-              </Button>
-              <Button
-                onClick={handleClose}
-                color='default'
-                type='submit'
-                value='Send Message'
-                className='btn btn-lg btn-dark btn-block'
-              >
-                Login
-              </Button>
-            </DialogActions>
-          </div>
-        </form>
-      </Dialog>
-    </div>
+          </form>
+        </Dialog>
+      </div>
+    </>
   );
 };
 
