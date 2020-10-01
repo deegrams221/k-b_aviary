@@ -1,5 +1,4 @@
 import React from 'react';
-import InventoryPage from '../inventory/InventoryPage';
 import ContactForm from './ContactForm';
 
 export default function Content() {

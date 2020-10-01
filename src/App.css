@@ -28,17 +28,6 @@ body,
   margin: 0 auto;
 } */
 
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.cards>.inventory-cards {
-  max-width: 250px;
-  margin: 20px 20px;
-}
-
 .links {
   display: flex;
   align-items: center;
@@ -127,20 +116,6 @@ h3 {
 .content>.container>.subcontainer>.content-four>h2,
 h3 {
   background-color: #ffffff;
-}
-
-.content>.container>.subcontainer>.buttons {
-  display: flex;
-  justify-content: space-between;
-  width: 68%;
-}
-
-.content>.container>.subcontainer>.buttons>.inventory-button {
-  padding-right: 20px;
-}
-
-.inventory-page {
-  margin: 0 auto;
 }
 
 .content>.container-two {
