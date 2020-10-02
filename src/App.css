@@ -156,6 +156,17 @@ h3 {
   max-width: 504px;
 }
 
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cards>.card {
+  max-width: 250px;
+  margin: 12px;
+}
+
 .footer {
   height: 150px;
   margin-top: 5em;

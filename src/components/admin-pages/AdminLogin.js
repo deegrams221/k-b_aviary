@@ -1,8 +1,6 @@
 import {
   Button,
   Checkbox,
-  Dialog,
-  DialogActions,
   DialogContent,
   DialogContentText,
   DialogTitle,
@@ -12,96 +10,88 @@ import {
 import axios from 'axios';
 import { withFormik } from 'formik';
 import React, { useState } from 'react';
+import { Redirect } from 'react-router-dom';
 import * as Yup from 'yup';
 
-const AdminLogin = ({ errors, touched, status }) => {
-  const [open, setOpen] = useState(false);
+const AdminLogin = ({ errors, touched, status, props }) => {
+  const { from } = { from: { pathname: '/' } };
+  console.log(from);
+  const [redirectToReferrer, setRedirectToReferrer] = useState(false);
 
-  const handleClickOpen = () => {
-    setOpen(true);
+  const login = () => {
+    fakeAuth.authenticate(() => {
+      setRedirectToReferrer(true);
+    });
   };
 
-  const handleClose = () => {
-    setOpen(false);
-  };
-
+  if (redirectToReferrer) {
+    return <Redirect to={from} />;
+  }
   return (
     <>
       <div className='contact-btn'>
-        <Button className='button' color='default' onClick={handleClickOpen}>
-          ADMIN LOGIN
-        </Button>
-        <Dialog
-          open={open}
-          onClose={handleClose}
-          aria-labelledby='form-dialog-title'
-        >
-          <form noValidate>
-            <div className='form-group'>
-              <div className='form-row'>
-                <DialogTitle id='form-dialog-title'>ADMIN LOGIN</DialogTitle>
-                <DialogContent>
-                  <DialogContentText>*ADMIN ONLY.</DialogContentText>
-                  <DialogContentText>
-                    GO BACK IF YOU ARE NOT ADMIN.
-                  </DialogContentText>
-                </DialogContent>
-              </div>
-              <div className='col'>
-                {errors.email && touched.email && (
-                  <p className='error'>{errors.email}</p>
-                )}
-                <TextField
-                  margin='dense'
-                  required
-                  className='form-control'
-                  id='email'
-                  label='Email Address'
-                  name='email'
-                  autoComplete='email'
-                  autoFocus
-                  placeholder='Enter Email Here'
-                />
-              </div>
-              <div className='col'>
-                {errors.password && touched.password && (
-                  <p className='error'>{errors.password}</p>
-                )}
-                <TextField
-                  margin='dense'
-                  required
-                  className='form-control'
-                  name='password'
-                  label='Password'
-                  type='password'
-                  id='password'
-                  autoComplete='current-password'
-                  placeholder='Enter Password Here'
-                />
-              </div>
-              <div className='col'>
-                <FormControlLabel
-                  control={<Checkbox value='remember' color='primary' />}
-                  label='Remember me'
-                />
-              </div>
-              <DialogActions>
-                <Button onClick={handleClose} color='default'>
-                  Cancel
-                </Button>
-                <Button
-                  onClick={handleClose}
-                  color='default'
-                  type='submit'
-                  value='Send Message'
-                  className='btn btn-lg btn-dark btn-block'
-                >
-                  Login
-                </Button>
-              </DialogActions>
+        <form noValidate>
+          <div className='form-group'>
+            <div className='form-row'>
+              <DialogTitle id='form-dialog-title'>ADMIN LOGIN</DialogTitle>
+              <DialogContent>
+                <DialogContentText>*ADMIN ONLY.</DialogContentText>
+                <DialogContentText>
+                  GO BACK IF YOU ARE NOT ADMIN.
+                </DialogContentText>
+              </DialogContent>
             </div>
-          </form>
-        </Dialog>
+            <div className='col'>
+              {errors.email && touched.email && (
+                <p className='error'>{errors.email}</p>
+              )}
+              <TextField
+                margin='dense'
+                required
+                className='form-control'
+                id='email'
+                label='Email Address'
+                name='email'
+                autoComplete='email'
+                autoFocus
+                placeholder='Enter Email Here'
+              />
+            </div>
+            <div className='col'>
+              {errors.password && touched.password && (
+                <p className='error'>{errors.password}</p>
+              )}
+              <TextField
+                margin='dense'
+                required
+                className='form-control'
+                name='password'
+                label='Password'
+                type='password'
+                id='password'
+                autoComplete='current-password'
+                placeholder='Enter Password Here'
+              />
+            </div>
+            <div className='col'>
+              <FormControlLabel
+                control={<Checkbox value='remember' color='primary' />}
+                label='Remember me'
+              />
+            </div>
+            <div className='col'>
+              <Button
+                onClick={login}
+                color='default'
+                variant='outlined'
+                type='submit'
+                className='btn btn-lg btn-dark btn-block'
+              >
+                Login
+              </Button>
+            </div>
+          </div>
+        </form>
       </div>
     </>
   );
@@ -136,3 +126,11 @@ const FormikAdminLogin = withFormik({
 })(AdminLogin);
 
 export default FormikAdminLogin;
+
+export const fakeAuth = {
+  isAuthenticated: false,
+  authenticate(cb) {
+    this.isAuthenticated = true;
+    setTimeout(cb, 100);
+  },
+};

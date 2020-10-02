@@ -7,7 +7,7 @@ import {
 } from '@material-ui/core';
 import React, { useState } from 'react';
 
-export default function AdminInventoryForm() {
+export default function AdminEditCard() {
   const [open, setOpen] = useState(false);
 
   const handleClickOpen = () => {
@@ -22,7 +22,7 @@ export default function AdminInventoryForm() {
     <>
       <div className='contact-btn'>
         <Button className='button' color='default' onClick={handleClickOpen}>
-          ADD INVENTORY
+          EDIT
         </Button>
         <Dialog
           open={open}
@@ -32,7 +32,7 @@ export default function AdminInventoryForm() {
           <form>
             <div className='form-group'>
               <div className='form-row'>
-                <DialogTitle id='form-dialog-title'>ADD INVENTORY</DialogTitle>
+                <DialogTitle id='form-dialog-title'>EDIT ITEM</DialogTitle>
                 <div className='col'>
                   <TextField
                     name='upload-photo'
@@ -83,7 +83,7 @@ export default function AdminInventoryForm() {
                 type='submit'
                 className='btn btn-lg btn-dark btn-block'
               >
-                Submit
+                Update
               </Button>
               <Button onClick={handleClose} color='secondary'>
                 Cancel

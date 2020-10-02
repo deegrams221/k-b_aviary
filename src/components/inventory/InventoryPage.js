@@ -28,7 +28,7 @@ export default function InventoryPage(props) {
         >
           <h1>Inventory</h1>
           <h2>
-            Bellow is a list of the birds we currently have available for
+            Below is a list of the birds we currently have available for
             purchase. If you are interested in any of these birds, please send a
             message with the inventory number.
           </h2>
