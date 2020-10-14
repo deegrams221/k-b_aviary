@@ -6,8 +6,8 @@ export default function Content() {
     <div className='content'>
       <p>Small hobby breeder of cockatiels and green cheek conures</p>
       <img
-        src={require('../../images/placeholder-images-image_large.webp')}
-        alt='K & B Aviary Logo'
+        src={require('../../images/bird_room.jpg')}
+        alt='K & B Aviary Bird Room'
       />
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -60,8 +60,8 @@ export default function Content() {
       <div className='container-two'>
         <div className='one'>
           <img
-            src={require('../../images/placeholder-images-image_large.webp')}
-            alt='K & B Aviary Logo'
+            src={require('../../images/baby_conure.jpg')}
+            alt='Baby Conure'
             width='345px'
             height='168px'
           />
@@ -84,8 +84,8 @@ export default function Content() {
         </div>
         <div className='four'>
           <img
-            src={require('../../images/placeholder-images-image_large.webp')}
-            alt='K & B Aviary Logo'
+            src={require('../../images/whiteface_cockatiel.jpg')}
+            alt='Young Whiteface Cockatiel'
             width='345px'
             height='168px'
           />
@@ -93,8 +93,8 @@ export default function Content() {
 
         <div className='five'>
           <img
-            src={require('../../images/placeholder-images-image_large.webp')}
-            alt='K & B Aviary Logo'
+            src={require('../../images/full_grown_birds.jpg')}
+            alt='Full grown Conure and Cockatiel on a persons shoulder'
             width='345px'
             height='168px'
           />
@@ -117,8 +117,8 @@ export default function Content() {
         </div>
         <div className='eight'>
           <img
-            src={require('../../images/placeholder-images-image_large.webp')}
-            alt='K & B Aviary Logo'
+            src={require('../../images/cinnamon_cockatiel_full.jpg')}
+            alt='Full grown Cinnamon Cockatiel'
             width='345px'
             height='168px'
           />
