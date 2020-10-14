@@ -8,8 +8,8 @@ export default function Content() {
       <div className='content'>
         <p>Small hobby breeder of cockatiels and green cheek conures</p>
         <img
-          src={require('../../images/placeholder-images-image_large.webp')}
-          alt='K & B Aviary Logo'
+          src={require('../../images/bird_room.jpg')}
+          alt='K & B Aviary Bird Room'
         />
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -65,8 +65,8 @@ export default function Content() {
         <div className='container-two'>
           <div className='one'>
             <img
-              src={require('../../images/placeholder-images-image_large.webp')}
-              alt='K & B Aviary Logo'
+              src={require('../../images/baby_conure.jpg')}
+              alt='Baby Conure'
               width='345px'
               height='168px'
             />
@@ -89,8 +89,8 @@ export default function Content() {
           </div>
           <div className='four'>
             <img
-              src={require('../../images/placeholder-images-image_large.webp')}
-              alt='K & B Aviary Logo'
+              src={require('../../images/whiteface_cockatiel.jpg')}
+              alt='Young Whiteface Cockatiel'
               width='345px'
               height='168px'
             />
@@ -98,8 +98,8 @@ export default function Content() {
 
           <div className='five'>
             <img
-              src={require('../../images/placeholder-images-image_large.webp')}
-              alt='K & B Aviary Logo'
+              src={require('../../images/full_grown_birds.jpg')}
+              alt='Full grown Conure and Cockatiel on a persons shoulder'
               width='345px'
               height='168px'
             />
@@ -114,21 +114,23 @@ export default function Content() {
           </div>
           <div className='seven'>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem
-              ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua
+              Nisi tempor amet commodo in id ea elit ullamco occaecat laborum
+              occaecat nisi anim. Deserunt laborum culpa culpa nisi quis
+              adipisicing Lorem mollit minim. Nulla laborum deserunt pariatur
+              nostrud. Tempor proident aute laborum fugiat. Ex officia aliquip
+              qui aute sit dolor excepteur sit do veniam.
             </p>
           </div>
           <div className='eight'>
             <img
-              src={require('../../images/placeholder-images-image_large.webp')}
-              alt='K & B Aviary Logo'
+              src={require('../../images/cinnamon_cockatiel_full.jpg')}
+              alt='Full grown Cinnamon Cockatiel'
               width='345px'
               height='168px'
             />
           </div>
         </div>
+
         <div className='container-three'>
           <h2>Video Title</h2>
           <iframe

@@ -48,7 +48,7 @@ body,
 
 .content>img {
   border: 2px dashed #2f553e;
-  width: '575px';
+  max-width: 800px;
 }
 
 .content>.container {
@@ -196,6 +196,10 @@ h3 {
 @media screen and (max-width: 800px) {
   .footer>.footer-info {
     display: none;
+  }
+
+  .content>img {
+    max-width: 700px;
   }
 
   .content>.container-two {
