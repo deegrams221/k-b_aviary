@@ -4,7 +4,12 @@ import ContactForm from './ContactForm';
 export default function Content() {
   return (
     <div className='content'>
-      <p>Small hobby breeder of cockatiels and green cheek conures</p>
+      <p>
+        <b>
+          Small hobby breeder of Cockatiels, Green-Cheeked Conures, Bourke's
+          Parakeets, and Budgies
+        </b>
+      </p>
       <img
         src={require('../../images/bird_room.jpg')}
         alt='K & B Aviary Bird Room'
@@ -23,31 +28,31 @@ export default function Content() {
         />
         <div className='subcontainer'>
           <div className='content-one'>
-            <h2>INFO TITLE</h2>
+            <h2>COCKATIELS</h2>
             <h3>
-              Add detail here Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit
+              Considered the most popular of the parrot family, they are
+              outgoing and they love to climb and play!
             </h3>
           </div>
           <div className='content-two'>
-            <h2>INFO TITLE</h2>
+            <h2>CONURES</h2>
             <h3>
-              Add detail here Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit
+              Great personalities and can be outgoing and comical, but they can
+              also be a little shy.
             </h3>
           </div>
           <div className='content-three'>
-            <h2>INFO TITLE</h2>
+            <h2>BUDGIES</h2>
             <h3>
-              Add detail here Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit
+              Known to have a big personality! They are small but full of
+              character.
             </h3>
           </div>
           <div className='content-four'>
-            <h2>INFO TITLE</h2>
+            <h2>PARAKEETS</h2>
             <h3>
-              Add detail here Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit
+              A great introductory bird for new bird owners! They have a calm
+              demeanor.
             </h3>
           </div>
           <div className='buttons'>
@@ -60,32 +65,36 @@ export default function Content() {
       <div className='container-two'>
         <div className='one'>
           <img
-            src={require('../../images/baby_conure.jpg')}
-            alt='Baby Conure'
+            src={require('../../images/bourke_parakeets.png')}
+            alt='Six Bourke parakeets in a cage'
             width='345px'
             height='168px'
           />
         </div>
         <div className='two'>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem
-            ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua
+            <b>Bourke's Parakeets</b> are a great introductory bird for new bird
+            owners; they have a calm demeanor and they keep themselves
+            entertained. They are ideal apartment living because they are quiet
+            and they are excellent partners for finches and cockatiels as well
+            as other Bourke's parakeets. Keep gentle Bourke's parakeets away
+            from larger, aggressive birds.
           </p>
         </div>
         <div className='three'>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem
-            ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua
+            <b>Opaline Budgies</b> are the most common variant of budgie.
+            Budgies are often referred to as the "most popular bird" becasue
+            there are more budgies in the world than any other type of pet bird.
+            Budgies are known to have a big personality too; they’re small but
+            full of character, cramming all the charisma of a parrot into a
+            package not much bigger than a canary.
           </p>
         </div>
         <div className='four'>
           <img
-            src={require('../../images/whiteface_cockatiel.jpg')}
-            alt='Young Whiteface Cockatiel'
+            src={require('../../images/budgies.png')}
+            alt='One Opaline Budgie and one Crested Budgie sitting on a perch'
             width='345px'
             height='168px'
           />
@@ -93,26 +102,29 @@ export default function Content() {
 
         <div className='five'>
           <img
-            src={require('../../images/full_grown_birds.jpg')}
-            alt='Full grown Conure and Cockatiel on a persons shoulder'
-            width='345px'
+            src={require('../../images/conures.jpg')}
+            alt='Group of four Green Cheeked Conures resting on a perch'
+            width='340px'
             height='168px'
           />
         </div>
         <div className='six'>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem
-            ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua
+            <b>Green Cheeked Conures</b> have great personalities and can be
+            outgoing and comical, but they can also be a little shy. They love
+            to play and will enjoy a good rotation of toys and a spacious cage
+            to run around. Green Cheeked Conures are also one of the smallest
+            conures; averaging around 10 inches long.
           </p>
         </div>
         <div className='seven'>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem
-            ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua
+            <b>Cinnamon Cockatiels</b> are unique in that they are a strain
+            developed by breeders and are not found in the wild. Grey cockatiels
+            are mostly what is seen in the wild and they are found over most of
+            Australia. Cockatiels are part of the parrot family, and are
+            considered the most popular of the parrot family. They are closely
+            related to the Cockatoos too.
           </p>
         </div>
         <div className='eight'>

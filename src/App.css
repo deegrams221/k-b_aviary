@@ -23,11 +23,6 @@ body,
   flex-direction: row;
 }
 
-h2 {
-  max-width: 80%;
-  margin: 0 auto;
-}
-
 .links {
   display: flex;
   align-items: center;
@@ -42,7 +37,7 @@ h2 {
 
 .content>p {
   font-size: 25px;
-  max-width: 373px;
+  max-width: 450px;
   margin: 30px auto;
 }
 
