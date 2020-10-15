@@ -46,6 +46,12 @@ body,
   max-width: 800px;
 }
 
+.content>.about>p, .container-three>p{
+  font-size: 18px;
+  max-width: 480px;
+  margin: 30px auto;
+}
+
 .content>.container {
   border: 2px dashed #2f553e;
   max-width: 575px;

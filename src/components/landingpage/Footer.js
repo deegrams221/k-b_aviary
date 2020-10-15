@@ -15,7 +15,7 @@ export default function Footer() {
       </div>
       <div className='footer-info'>
         <p>
-          small hobby breeder of Cockatiels, Green-Cheeked Conures, Bourke's
+          Small hobby breeder of Cockatiels, Green-Cheeked Conures, Bourke's
           Parakeets, and Budgies
         </p>
       </div>
