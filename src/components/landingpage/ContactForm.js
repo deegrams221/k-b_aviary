@@ -95,7 +95,6 @@ export default function ContactForm() {
               Cancel
             </Button>
             <Button
-              onClick={handleClose}
               color='default'
               type='submit'
               value='Send Message'
