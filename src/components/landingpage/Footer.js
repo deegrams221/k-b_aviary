@@ -14,7 +14,10 @@ export default function Footer() {
         <Links />
       </div>
       <div className='footer-info'>
-        <p>small hobby breeder of cockatiels and green cheek conures</p>
+        <p>
+          small hobby breeder of Cockatiels, Green-Cheeked Conures, Bourke's
+          Parakeets, and Budgies
+        </p>
       </div>
       <div className='footer-btns'>
         <div className='footer-contact-btn'>
