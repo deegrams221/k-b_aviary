@@ -124,7 +124,6 @@ h3 {
 
 #content>.container-two {
   margin: 40px auto;
-  display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   max-width: 770px;
@@ -207,6 +206,10 @@ h3 {
   flex-direction: column;
 }
 
+.footer>img {
+  padding: 0 0 2rem 2rem;
+}
+
 /* Tablet View */
 @media screen and (max-width: 800px) {
   .footer>.footer-info {
@@ -228,7 +231,7 @@ h3 {
 }
 
 /* Mobile View */
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 540px) {
 
   html,
   body,
@@ -250,7 +253,7 @@ h3 {
   }
 
   #content>p {
-    font-size: 25px;
+    font-size: 20px;
     max-width: 300px;
     margin: 30px auto;
   }
@@ -263,9 +266,9 @@ h3 {
     max-width: 300px;
   }
 
-
-  #content>.about>p{
-    max-width: 300px;
+  #content>.about>p, .container-three>p{
+    font-size: 16px;
+    max-width: 290px;
     text-align: justify;
   }
 
@@ -293,19 +296,7 @@ h3 {
     margin: 20px auto;
   }
 
-  #content>.container-two>.top>.one,
-  .two, .middle-top>
-  .three,
-  .four, .middle-bottom>
-  .five,
-  .six, .bottom>
-  .seven,
-  .eight {
-    margin: 0 auto;
-  }
-
   #content>.container-two>.top {
-    display: flex;
     flex-direction: column;
   }
   #content>.container-two>.top>.one>img, .middle-top>.four>img, .middle-bottom>.five>img, .bottom>.eight>img {
@@ -318,24 +309,24 @@ h3 {
   }
 
   #content>.container-two>.middle-top {
-    display: flex;
     flex-direction: column-reverse;
+    align-items: center;
   }
   #content>.container-two>.middle-top>.three>p {
     text-align: justify;
   }
 
   #content>.container-two>.middle-bottom {
-    display: flex;
     flex-direction: column;
+    align-items: center;
   }
   #content>.container-two>.middle-bottom>.six>p {
     text-align: justify;
   }
 
   #content>.container-two>.bottom {
-    display: flex;
     flex-direction: column-reverse;
+    align-items: center;
   }
   #content>.container-two>.bottom>.seven>p {
     text-align: justify;
@@ -366,7 +357,8 @@ h3 {
 
   .footer>img {
     max-width: 200px;
-    margin-left: 3rem;
+    align-self: center;
+    padding-left: 0;
   }
 
   .footer>.footer-links {

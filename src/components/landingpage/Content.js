@@ -11,7 +11,7 @@ export default function Content() {
       <div id='content'>
         <p>
           <b>
-            Small hobby breeder of Cockatiels, Green-Cheeked Conures, Bourke's
+            Small hobby breeder of Cockatiels, Green Cheeked Conures, Bourke's
             Parakeets, and Budgies
           </b>
         </p>
@@ -204,14 +204,14 @@ export default function Content() {
           </div>
         </div>
         <div className='container-three'>
-          {/* <h2>Muppets Bohemian Rhapsody</h2>
+          <h2>Baby Cockatiels</h2>
           <iframe
             className='iframe'
             title='video'
             width='575'
             height='315'
             src='https://www.youtube.com/embed/tgbNymZ7vqY'
-          /> */}
+          />
           <p>
             <b>Did you know that birds are really smart?</b>
             <br />
