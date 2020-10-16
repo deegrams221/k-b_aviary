@@ -18,14 +18,13 @@ export default function Content() {
         <div id='carousel'>
           <Carousel
             clickToChange
-            fastSwipe
             dots
+            infinite
+            centered
             slidesPerPage={2}
             breakpoints={{
               640: { slidesPerPage: 1 },
             }}
-            infinite
-            centered
           >
             <img
               src={require('../../images/cockatiel_babies.jpg')}
