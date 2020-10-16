@@ -67,77 +67,84 @@ export default function Content() {
           </div>
         </div>
         <div className='container-two'>
-          <div className='one'>
-            <img
-              src={require('../../images/bourke_parakeets.png')}
-              alt='Six Bourke parakeets in a cage'
-              width='345px'
-              height='168px'
-            />
+          <div className='top'>
+            <div className='one'>
+              <img
+                src={require('../../images/bourke_parakeets.png')}
+                alt='Six Bourke parakeets in a cage'
+                width='345px'
+                height='168px'
+              />
+            </div>
+            <div className='two'>
+              <p>
+                <b>Bourke's Parakeets</b> are a great introductory bird for new
+                bird owners; they have a calm demeanor and they keep themselves
+                entertained. They are ideal for apartment living because they
+                are quiet. They are excellent partners for finches and
+                cockatiels as well as other Bourke's parakeets. Keep gentle
+                Bourke's parakeets away from larger, aggressive birds.
+              </p>
+            </div>
           </div>
-          <div className='two'>
-            <p>
-              <b>Bourke's Parakeets</b> are a great introductory bird for new
-              bird owners; they have a calm demeanor and they keep themselves
-              entertained. They are ideal for apartment living because they are
-              quiet. They are excellent partners for finches and cockatiels as
-              well as other Bourke's parakeets. Keep gentle Bourke's parakeets
-              away from larger, aggressive birds.
-            </p>
+          <div className='middle-top'>
+            <div className='three'>
+              <p>
+                <b>Opaline Budgies</b> are the most common variant of budgie.
+                Budgies are often referred to as the "most popular bird" because
+                there are more budgies in the world than any other type of pet
+                bird. Budgies are known to have a big personality too; they’re
+                small but full of character, cramming all the charisma of a
+                parrot into a package not much bigger than a canary.
+              </p>
+            </div>
+            <div className='four'>
+              <img
+                src={require('../../images/budgies.png')}
+                alt='One Opaline Budgie and one Crested Budgie sitting on a perch'
+                width='345px'
+                height='168px'
+              />
+            </div>
           </div>
-          <div className='three'>
-            <p>
-              <b>Opaline Budgies</b> are the most common variant of budgie.
-              Budgies are often referred to as the "most popular bird" because
-              there are more budgies in the world than any other type of pet
-              bird. Budgies are known to have a big personality too; they’re
-              small but full of character, cramming all the charisma of a parrot
-              into a package not much bigger than a canary.
-            </p>
+          <div className='middle-bottom'>
+            <div className='five'>
+              <img
+                src={require('../../images/conures.jpg')}
+                alt='Group of four Green Cheeked Conures resting on a perch'
+                width='340px'
+                height='168px'
+              />
+            </div>
+            <div className='six'>
+              <p>
+                <b>Green Cheeked Conures</b> have great personalities and can be
+                outgoing and comical, but they can also be a little shy. They
+                love to play and will enjoy a good rotation of toys and a
+                spacious cage to run around. Green Cheeked Conures are also one
+                of the smallest conures; averaging around 10 inches long.
+              </p>
+            </div>
           </div>
-          <div className='four'>
-            <img
-              src={require('../../images/budgies.png')}
-              alt='One Opaline Budgie and one Crested Budgie sitting on a perch'
-              width='345px'
-              height='168px'
-            />
-          </div>
-
-          <div className='five'>
-            <img
-              src={require('../../images/conures.jpg')}
-              alt='Group of four Green Cheeked Conures resting on a perch'
-              width='340px'
-              height='168px'
-            />
-          </div>
-          <div className='six'>
-            <p>
-              <b>Green Cheeked Conures</b> have great personalities and can be
-              outgoing and comical, but they can also be a little shy. They love
-              to play and will enjoy a good rotation of toys and a spacious cage
-              to run around. Green Cheeked Conures are also one of the smallest
-              conures; averaging around 10 inches long.
-            </p>
-          </div>
-          <div className='seven'>
-            <p>
-              <b>Cinnamon Cockatiels</b> are unique in that they are a strain
-              developed by breeders and are not found in the wild. Grey
-              cockatiels are mostly what is seen in the wild and they are found
-              all over most of Australia. Cockatiels are part of the parrot
-              family, and are considered the most popular of the parrot family.
-              They are closely related to the Cockatoos too.
-            </p>
-          </div>
-          <div className='eight'>
-            <img
-              src={require('../../images/cinnamon_cockatiel_full.jpg')}
-              alt='Full grown Cinnamon Cockatiel'
-              width='345px'
-              height='168px'
-            />
+          <div className='bottom'>
+            <div className='seven'>
+              <p>
+                <b>Cinnamon Cockatiels</b> are unique in that they are a strain
+                developed by breeders and are not found in the wild. Grey
+                cockatiels are mostly what is seen in the wild and they are
+                found all over most of Australia. Cockatiels are part of the
+                parrot family, and are considered the most popular of the parrot
+                family. They are closely related to the Cockatoos too.
+              </p>
+            </div>
+            <div className='eight'>
+              <img
+                src={require('../../images/cinnamon_cockatiel_full.jpg')}
+                alt='Full grown Cinnamon Cockatiel'
+                width='345px'
+                height='168px'
+              />
+            </div>
           </div>
         </div>
         <div className='container-three'>
