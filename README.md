@@ -20,6 +20,9 @@ Single page webpage with the client provided information, images, and video. Con
 ### Plan for version 2.0: 
 The client would like to have a login, once logged in the client will be able to upload images and descriptions of the birds they have available for purchase in an 'inventory' page. Users will be able to view the inventory but will not be able to login. Also plan to create a backend in Firebase, so the client can easily upload and maintain the artifacts.
 
+### Plan for version 3.0:
+Add a page for the client's verified customers to leave Reviews and Testimonials.
+
 ### Technology Used:
 React.js | JavaScript | Material-UI | CSS
 <br>
