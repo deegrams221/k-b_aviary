@@ -1,4 +1,8 @@
+// import Carousel, { arrowsPlugin } from '@brainhubeu/react-carousel';
+import Carousel from '@brainhubeu/react-carousel';
+import '@brainhubeu/react-carousel/lib/style.css';
 import React from 'react';
+// import Icon from 'react-fa';
 import ContactForm from './ContactForm';
 
 export default function Content() {
@@ -11,10 +15,51 @@ export default function Content() {
             Parakeets, and Budgies
           </b>
         </p>
-        <img
-          src={require('../../images/bird_room.jpg')}
-          alt='K & B Aviary Bird Breeding Room'
-        />
+        <div id='carousel'>
+          <Carousel
+            clickToChange
+            fastSwipe
+            dots
+            slidesPerPage={2}
+            breakpoints={{
+              640: { slidesPerPage: 1 },
+            }}
+            infinite
+            centered
+          >
+            <img
+              src={require('../../images/cockatiel_babies.png')}
+              alt='Four baby Cockatiels'
+              height='300px'
+            />
+            <img
+              src={require('../../images/baby_bird.jpg')}
+              alt='Baby Conure being held'
+              height='300px'
+            />
+            <img
+              src={require('../../images/adult_lutino_cockatiel.png')}
+              alt='Adult Lutino Cockatiel'
+              height='300px'
+            />
+            <img
+              src={require('../../images/budgie.png')}
+              alt='Budgie sitting on a perch'
+              height='300px'
+            />
+            <img
+              src={require('../../images/cockateil2_full.jpeg')}
+              alt='Adult Cinnamon Cockatiel'
+              height='300px'
+            />
+            <img
+              src={require('../../images/cockateil.jpeg')}
+              alt='Adult Whiteface Cockatiel'
+              height='300px'
+            />
+          </Carousel>
+        </div>
+
         <div className='about'>
           <p>
             K & B Aviary was started a few years ago, because we have a passion
