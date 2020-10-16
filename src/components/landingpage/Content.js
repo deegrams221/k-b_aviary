@@ -8,14 +8,14 @@ import ContactForm from './ContactForm';
 export default function Content() {
   return (
     <>
-      <div className='content'>
+      <div id='content'>
         <p>
           <b>
             Small hobby breeder of Cockatiels, Green-Cheeked Conures, Bourke's
             Parakeets, and Budgies
           </b>
         </p>
-        <div id='carousel'>
+        <div className='carousel'>
           <Carousel
             clickToChange
             dots
@@ -67,11 +67,17 @@ export default function Content() {
 
         <div className='about'>
           <p>
-            K & B Aviary was started a few years ago, because we have a passion
-            for raising birds. We have worked in many pet shops and with many
-            different types of birds. We've decided to raise Cockatiels,
-            Green-Cheeked Conures, Bourke's Parakeets, and Budgies because they
-            are the most fun!
+            We are a small hobby breeder based out of Lawrenceville, GA. We
+            breed Cockatiels, Green-Cheeked Conures, Bourke's Parakeets, and
+            Budgies. We love helping individuals and families find the right
+            type of pet bird for them!
+            <br /> <br />
+            We started raising and breeding birds a few years ago. We do our
+            best to make sure our birds are healthy and strong. Birds are so
+            much fun to raise because they are social creatures. They can greet
+            you good morning with songs and all those cute bird sounds. They can
+            also welcome you home and relieve your stress with their songs at
+            night.
           </p>
         </div>
         <div className='container'>
@@ -198,24 +204,26 @@ export default function Content() {
           </div>
         </div>
         <div className='container-three'>
-          <h2>Muppets Bohemian Rhapsody</h2>
+          {/* <h2>Muppets Bohemian Rhapsody</h2>
           <iframe
             className='iframe'
             title='video'
             width='575'
             height='315'
             src='https://www.youtube.com/embed/tgbNymZ7vqY'
-          />
+          /> */}
           <p>
-            Ad pariatur dolor occaecat cupidatat amet eiusmod laborum nostrud
-            reprehenderit est. Nulla esse consectetur velit incididunt laborum
-            sit incididunt dolore minim culpa.
-          </p>
-          <p>
-            Laborum laborum Lorem adipisicing amet voluptate magna adipisicing
-            proident aliquip deserunt sint voluptate duis. Culpa fugiat occaecat
-            esse voluptate. Nostrud minim tempor amet aliquip qui esse ad
-            aliquip.
+            <b>Did you know that birds are really smart?</b>
+            <br />
+            <br />
+            Studies have shown that birds have great problem-solving skills and
+            cognitive skills that prove their high-level of intellect. They have
+            excellent navigation skills and migrate thousands of miles twice a
+            year. <br />
+            <br />
+            Because they are smart, training and taming birds is easy. Among
+            those bird breeds that are classified intelligent and easy to train
+            are cockatiels, parrots, and cockatoos.
           </p>
         </div>
       </div>
