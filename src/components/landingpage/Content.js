@@ -51,8 +51,14 @@ export default function Content() {
               height='300px'
             />
             <img
-              src={require('../../images/cockateil2_full.jpg')}
-              alt='Adult Cinnamon Cockatiel'
+              src={require('../../images/cockatiel_pair2.jpg')}
+              alt='Two Adult Cockatiels'
+              loading='lazy'
+              height='300px'
+            />
+            <img
+              src={require('../../images/opaline_budgie.jpg')}
+              alt='Opaline Budgie sitting on a perch'
               loading='lazy'
               height='300px'
             />
