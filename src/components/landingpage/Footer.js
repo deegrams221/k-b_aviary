@@ -10,14 +10,18 @@ export default function Footer() {
         alt='K & B Aviary Logo'
         width='250px'
       />
-      <div className='footer-links'>
-        <Links />
-      </div>
       <div className='footer-info'>
         <p>
           Small hobby breeder of Cockatiels, Green-Cheeked Conures, Bourke's
           Parakeets, and Budgies
         </p>
+      </div>
+      <div className='footer-links'>
+        <Links />
+      </div>
+      <div className='footer-contact-info'>
+        <p>(770) 906-0347</p>
+        <p>kbaviaries@gmail.com</p>
       </div>
       <div className='footer-btns'>
         <div className='footer-contact-btn'>

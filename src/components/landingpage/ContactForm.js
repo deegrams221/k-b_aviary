@@ -36,7 +36,7 @@ export default function ContactForm() {
         aria-labelledby='form-dialog-title'
       >
         <form
-          action='https://formsubmit.co/deegrams221@gmail.com'
+          action='https://formsubmit.co/kbaviaries@gmail.com'
           method='POST'
           autoComplete='off'
         >
@@ -44,6 +44,8 @@ export default function ContactForm() {
             <div className='form-row'>
               <DialogTitle id='form-dialog-title'>CONTACT US</DialogTitle>
               <DialogContent>
+                <DialogContentText>Call us at (770) 906-0347</DialogContentText>
+                <DialogContentText>OR</DialogContentText>
                 <DialogContentText>
                   Enter your name, email, and a quick message.
                 </DialogContentText>
