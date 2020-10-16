@@ -29,26 +29,31 @@ export default function Content() {
             <img
               src={require('../../images/cockatiel_babies.jpg')}
               alt='Four baby Cockatiels'
+              loading='lazy'
               height='300px'
             />
             <img
               src={require('../../images/baby_bird.jpg')}
               alt='Baby Conure being held'
+              loading='lazy'
               height='300px'
             />
             <img
               src={require('../../images/adult_lutino_cockatiel.jpg')}
               alt='Adult Lutino Cockatiel'
+              loading='lazy'
               height='300px'
             />
             <img
               src={require('../../images/budgie.jpg')}
               alt='Budgie sitting on a perch'
+              loading='lazy'
               height='300px'
             />
             <img
               src={require('../../images/cockateil2_full.jpg')}
               alt='Adult Cinnamon Cockatiel'
+              loading='lazy'
               height='300px'
             />
           </Carousel>
