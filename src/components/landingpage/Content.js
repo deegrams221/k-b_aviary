@@ -28,7 +28,7 @@ export default function Content() {
             centered
           >
             <img
-              src={require('../../images/cockatiel_babies.png')}
+              src={require('../../images/cockatiel_babies.jpg')}
               alt='Four baby Cockatiels'
               height='300px'
             />
@@ -38,23 +38,18 @@ export default function Content() {
               height='300px'
             />
             <img
-              src={require('../../images/adult_lutino_cockatiel.png')}
+              src={require('../../images/adult_lutino_cockatiel.jpg')}
               alt='Adult Lutino Cockatiel'
               height='300px'
             />
             <img
-              src={require('../../images/budgie.png')}
+              src={require('../../images/budgie.jpg')}
               alt='Budgie sitting on a perch'
               height='300px'
             />
             <img
-              src={require('../../images/cockateil2_full.jpeg')}
+              src={require('../../images/cockateil2_full.jpg')}
               alt='Adult Cinnamon Cockatiel'
-              height='300px'
-            />
-            <img
-              src={require('../../images/cockateil.jpeg')}
-              alt='Adult Whiteface Cockatiel'
               height='300px'
             />
           </Carousel>
@@ -115,7 +110,7 @@ export default function Content() {
           <div className='top'>
             <div className='one'>
               <img
-                src={require('../../images/bourke_parakeets.png')}
+                src={require('../../images/bourke_parakeets.jpg')}
                 alt='Six Bourke parakeets in a cage'
                 width='345px'
                 height='168px'
@@ -145,7 +140,7 @@ export default function Content() {
             </div>
             <div className='four'>
               <img
-                src={require('../../images/budgies.png')}
+                src={require('../../images/budgies.jpg')}
                 alt='One Opaline Budgie and one Crested Budgie sitting on a perch'
                 width='345px'
                 height='168px'
