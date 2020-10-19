@@ -12,7 +12,7 @@ export default function Vendors() {
       >
         <img
           alt='Fancy Feathers Parrot Store'
-          src='http://fancyfeathersstore.com/wp-content/uploads/Fancy-Feathers_logo.png'
+          src={require('../../images/Fancy-Feathers_logo.png')}
         />
       </a>
       {/* Fancy Feather Bird Farm */}
