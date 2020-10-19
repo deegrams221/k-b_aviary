@@ -210,9 +210,9 @@ export default function Content() {
             height='315'
             src='https://www.youtube.com/embed/tgbNymZ7vqY'
           /> */}
-          <p>
-            <b>Did you know that birds are really smart?</b>
-          </p>
+          <div className='did-you-know'>
+            <p>Did you know that birds are really smart?</p>
+          </div>
           <p>
             Studies have shown that birds have great problem-solving skills and
             cognitive skills that prove their high-level of intellect. They have
