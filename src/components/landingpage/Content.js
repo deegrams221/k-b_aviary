@@ -225,7 +225,7 @@ export default function Content() {
           </p>
         </div>
         <div className='container-four vendors'>
-          <p>Prefered Vendors</p>
+          <p>Preferred Vendors</p>
           <Vendors />
         </div>
       </div>
