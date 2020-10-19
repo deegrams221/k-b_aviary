@@ -54,9 +54,11 @@ body,
 
 
 #content>.about>p, .container-three>p{
-  font-size: 18px;
-  max-width: 490px;
-  margin: 30px auto;
+  font-size: 1.2rem;
+  margin: 2rem auto;
+  margin-top: 2rem;
+  max-width: 30rem;
+  text-align: justify;
 }
 
 #content>.container {
@@ -179,15 +181,15 @@ h3 {
   text-align: justify;
 }
 
-#content>.container-three>p {
+#content>.container-three>.did-you-know {
+  border-bottom: #2f553e solid 5px;
+  max-width: 16rem;
   margin: 0 auto;
-  margin-top: 2rem;
-  max-width: 30rem;
 }
 
-#content>.container-three>p>b {
-  border-bottom: #2f553e solid 5px;
-  padding-bottom: 0.5rem;
+#content>.container-three>.did-you-know>p {
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
 #content>.container-four {
