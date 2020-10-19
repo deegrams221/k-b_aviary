@@ -12,7 +12,7 @@ export default function Vendors() {
       >
         <img
           alt='Fancy Feathers Parrot Store'
-          src='https://ladygouldian.com/files/FinchFamily_wText_low%205.jpg'
+          src={require('../../images/Fancy-Feathers_logo.png')}
         />
       </a>
       {/* Fancy Feather Bird Farm */}
@@ -36,7 +36,7 @@ export default function Vendors() {
       >
         <img
           alt='Laraines Lady Gouldians'
-          src='http://fancyfeathersstore.com/wp-content/uploads/Fancy-Feathers_logo.png'
+          src='https://ladygouldian.com/files/FinchFamily_wText_low%205.jpg'
         />
       </a>
     </div>
