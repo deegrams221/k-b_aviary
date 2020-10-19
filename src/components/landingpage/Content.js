@@ -4,17 +4,16 @@ import '@brainhubeu/react-carousel/lib/style.css';
 import React from 'react';
 // import Icon from 'react-fa';
 import ContactForm from './ContactForm';
+import Vendors from './Vendors';
 
 export default function Content() {
   return (
     <>
       <div id='content'>
-        <p>
-          <b>
-            Small hobby breeder of Cockatiels, Green-Cheeked Conures, Bourke's
-            Parakeets, and Budgies
-          </b>
-        </p>
+        <h1>Small Hobby Bird Breeder in Lawrenceville, Georgia</h1>
+        <h2>
+          Cockatiels, Green Cheeked Conures, Bourke's Parakeets, and Budgies
+        </h2>
         <div className='carousel'>
           <Carousel
             clickToChange
@@ -64,11 +63,10 @@ export default function Content() {
             />
           </Carousel>
         </div>
-
         <div className='about'>
           <p>
             We are a small hobby breeder based out of Lawrenceville, GA. We
-            breed Cockatiels, Green-Cheeked Conures, Bourke's Parakeets, and
+            breed Cockatiels, Green Cheeked Conures, Bourke's Parakeets, and
             Budgies. We love helping individuals and families find the right
             type of pet bird for them!
             <br /> <br />
@@ -122,7 +120,7 @@ export default function Content() {
             </div>
           </div>
         </div>
-        <div className='container-two'>
+        <div className='container-two types-of-birds'>
           <div className='top'>
             <div className='one'>
               <img
@@ -203,19 +201,19 @@ export default function Content() {
             </div>
           </div>
         </div>
-        <div className='container-three'>
-          {/* <h2>Muppets Bohemian Rhapsody</h2>
+        <div className='container-three video'>
+          {/* <h2>Baby Cockatiels</h2>
           <iframe
             className='iframe'
-            title='video'
+            title='Baby Cockatiels video'
             width='575'
             height='315'
             src='https://www.youtube.com/embed/tgbNymZ7vqY'
           /> */}
           <p>
             <b>Did you know that birds are really smart?</b>
-            <br />
-            <br />
+          </p>
+          <p>
             Studies have shown that birds have great problem-solving skills and
             cognitive skills that prove their high-level of intellect. They have
             excellent navigation skills and migrate thousands of miles twice a
@@ -225,6 +223,10 @@ export default function Content() {
             those bird breeds that are classified intelligent and easy to train
             are cockatiels, parrots, and cockatoos.
           </p>
+        </div>
+        <div className='container-four vendors'>
+          <p>Prefered Vendors</p>
+          <Vendors />
         </div>
       </div>
     </>

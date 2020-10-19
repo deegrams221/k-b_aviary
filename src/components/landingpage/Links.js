@@ -3,7 +3,6 @@ import React from 'react';
 export default function Links() {
   return (
     <div className='links'>
-      {/* <a id='about'>ABOUT</a> */}
       {/* Twitter */}
       <a
         target='_blank'
