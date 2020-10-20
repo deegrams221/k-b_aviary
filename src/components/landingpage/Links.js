@@ -4,13 +4,12 @@ export default function Links() {
   return (
     <>
       <div className='links'>
-        {/* <a id='about'>ABOUT</a> */}
         {/* Twitter */}
         <a
           target='_blank'
           rel='noopener noreferrer'
           title='follow me on Twitter'
-          href='https://www.twitter.com/PLACEHOLDER'
+          href='https://www.twitter.com/kbaviary'
         >
           <img
             alt='follow me on Twitter'
@@ -34,7 +33,7 @@ export default function Links() {
           target='_blank'
           rel='noopener noreferrer'
           title='follow me on instagram'
-          href='https://www.instagram.com/PLACEHOLDER'
+          href='https://www.instagram.com/barronkristina/'
         >
           <img
             alt='follow me on instagram'
