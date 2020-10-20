@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
 export default function InventoryCard(props) {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
-  const [editOpen, setEditOpen] = useState(false);
+  // const [editOpen, setEditOpen] = useState(false);
 
   const handleOpen = () => {
     setOpen(true);
@@ -38,37 +38,14 @@ export default function InventoryCard(props) {
   };
 
   const handleDelete = async (id) => {
-    // const deletedDoc = await firebase
-    //   .firestore()
-    //   .collection(`training/${props.topic}/modules`)
-    //   .doc(id)
-    //   .delete()
+    const deletedDoc = await firebase
+      .firestore()
+      .collection(`inventory/${props.type}`)
+      .doc(id)
+      .delete();
 
     setOpen(false);
   };
-
-  // useEffect(() => {
-  //   const unsubscribe = firebase
-  //     .firestore()
-  //     .collection(`users`)
-  //     .where("uid", "==", JSON.parse(localStorage.getItem("UID")))
-  //     .onSnapshot(
-  //       snapshot => {
-  //         const completedTrainingDocs = snapshot.docs.map(doc => {
-  //           return {
-  //             ...doc.data()
-  //           }
-  //         })
-  //         setUserData(completedTrainingDocs)
-  //       },
-  //       error => {
-  //         console.log(error)
-  //       }
-  //     )
-  //   return () => {
-  //     unsubscribe()
-  //   }
-  // }, [])
 
   return (
     <>
