@@ -12,7 +12,7 @@ export default function Content() {
       <div id='content'>
         <h1>Small Hobby Bird Breeder in Lawrenceville, Georgia</h1>
         <h2>
-          Cockatiels, Green Cheeked Conures, Bourke's Parakeets, and Budgies
+          Cockatiels, Green Cheek Conures, Bourke's Parakeets, and Budgies
         </h2>
         <div className='carousel'>
           <Carousel
@@ -65,17 +65,15 @@ export default function Content() {
         </div>
         <div className='about'>
           <p>
-            We are a small hobby breeder based out of Lawrenceville, GA. We
-            breed Cockatiels, Green Cheeked Conures, Bourke's Parakeets, and
-            Budgies. We love helping individuals and families find the right
-            type of pet bird for them!
-            <br /> <br />
-            We started raising and breeding birds a few years ago. We do our
-            best to make sure our birds are healthy and strong. Birds are so
-            much fun to raise because they are social creatures. They can greet
-            you good morning with songs and all those cute bird sounds. They can
-            also welcome you home and relieve your stress with their songs at
-            night.
+            K & B Aviary was started a few years after my move to Georgia.
+            Formerly The Cockatiel Zone in Southern California. It's been a 35
+            year passion. It never stops amazing me how each bird has an
+            individual personality. <br />
+            <br />
+            We strive for large, healthy birds. We breed predominantly
+            Cockatiels, Green cheek Conures, American Budgies and Bourke's
+            Parakeets. Hopefully in the future, Nanday Conures and Senegal's as
+            well.
           </p>
         </div>
         <div className='container'>
@@ -89,28 +87,30 @@ export default function Content() {
               <h2>COCKATIELS</h2>
               <h3>
                 Considered the most popular of the parrot family, they are
-                outgoing and they love to climb and play!
+                outgoing and they love to climb and play! The males can learn to
+                talk and whistle tunes.
               </h3>
             </div>
             <div className='content-two'>
-              <h2>CONURES</h2>
+              <h2>"GREEN CHEEK" CONURES</h2>
               <h3>
-                Great personalities and can be outgoing and comical, but they
-                can also be a little shy.
+                Great personality, outgoing little comedians. Are the smallest
+                and quietest of the Conures. Both males and females can learn to
+                say a few words. They can be very snuggly birds.
               </h3>
             </div>
             <div className='content-three'>
+              <h2>"BOURKE'S" PARAKEETS</h2>
+              <h3>
+                They have a sweet and gentle demeanor. They have a quiet very
+                calming voice.
+              </h3>
+            </div>
+            <div className='content-four'>
               <h2>BUDGIES</h2>
               <h3>
                 Known to have a big personality! They are small but full of
                 character.
-              </h3>
-            </div>
-            <div className='content-four'>
-              <h2>PARAKEETS</h2>
-              <h3>
-                A great introductory bird for new bird owners! They have a calm
-                demeanor.
               </h3>
             </div>
             <div className='buttons'>
@@ -132,11 +132,11 @@ export default function Content() {
             </div>
             <div className='two'>
               <p>
-                <b>Bourke's Parakeets</b> are a great introductory bird for new
-                bird owners; they have a calm demeanor and they keep themselves
-                entertained. They are ideal for apartment living because they
-                are quiet. They are excellent partners for finches and
-                cockatiels as well as other Bourke's parakeets. Keep gentle
+                <b>"Bourke's" Parakeets</b> are a great introductory bird for
+                new bird owners; they have a calm demeanor and they keep
+                themselves entertained. They are ideal for apartment living
+                because they are quiet. They are excellent partners for finches
+                and cockatiels as well as other Bourke's parakeets. Keep gentle
                 Bourke's parakeets away from larger, aggressive birds.
               </p>
             </div>
@@ -144,12 +144,11 @@ export default function Content() {
           <div className='middle-top'>
             <div className='three'>
               <p>
-                <b>Opaline Budgies</b> are the most common variant of budgie.
-                Budgies are often referred to as the "most popular bird" because
-                there are more budgies in the world than any other type of pet
-                bird. Budgies are known to have a big personality too; they’re
-                small but full of character, cramming all the charisma of a
-                parrot into a package not much bigger than a canary.
+                <b>Budgies</b> are often referred to as the "most popular bird"
+                because there are more budgies in the world than any other type
+                of pet bird. Budgies are known to have a big personality too;
+                they’re small but full of character, cramming all the charisma
+                of a parrot into a package not much bigger than a canary.
               </p>
             </div>
             <div className='four'>
@@ -165,30 +164,30 @@ export default function Content() {
             <div className='five'>
               <img
                 src={require('../../images/conures.jpg')}
-                alt='Group of four Green Cheeked Conures resting on a perch'
+                alt='Group of four Green Cheek Conures resting on a perch'
                 width='340px'
                 height='168px'
               />
             </div>
             <div className='six'>
               <p>
-                <b>Green Cheeked Conures</b> have great personalities and can be
-                outgoing and comical, but they can also be a little shy. They
-                love to play and will enjoy a good rotation of toys and a
-                spacious cage to run around. Green Cheeked Conures are also one
-                of the smallest conures; averaging around 10 inches long.
+                <b>"Green Cheek" Conures</b> have great personalities and can be
+                outgoing and comical. They love to play and will enjoy a good
+                rotation of toys and a spacious cage to run around. Green Cheek
+                Conures are also one of the smallest conures; averaging around
+                10 inches long.
               </p>
             </div>
           </div>
           <div className='bottom'>
             <div className='seven'>
               <p>
-                <b>Cinnamon Cockatiels</b> are unique in that they are a strain
-                developed by breeders and are not found in the wild. Grey
-                cockatiels are mostly what is seen in the wild and they are
-                found all over most of Australia. Cockatiels are part of the
-                parrot family, and are considered the most popular of the parrot
-                family. They are closely related to the Cockatoos too.
+                <b>Cinnamon "Pearl Pied" Cockatiels</b> are unique in that they
+                are a strain developed by breeders and are not found in the
+                wild. Grey cockatiels are mostly what is seen in the wild and
+                they are found all over most of Australia. Cockatiels are part
+                of the parrot family, and are considered the most popular of the
+                parrot family. They are closely related to the Cockatoos too.
               </p>
             </div>
             <div className='eight'>
