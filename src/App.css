@@ -200,7 +200,7 @@ body,
 .cards>.card {
   max-width: 250px;
   margin: 12px;
-  max-height: fit-content;
+  max-height: max-content;
 }
 
 .vendors {

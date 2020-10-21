@@ -5,14 +5,12 @@ import {
   DialogTitle,
   TextField,
 } from '@material-ui/core';
-import { Autocomplete } from '@material-ui/lab';
 import React, { useState } from 'react';
 import firebase from '../../firebase';
 import { useStorage } from '../hooks/useStorage';
 
 export default function AdminInventoryForm() {
   const [open, setOpen] = useState(false);
-  // sorting
   const [breed, setBreed] = useState('');
   const [inventoryNum, setInventoryNum] = useState('');
   const [description, setDescription] = useState('');
@@ -90,28 +88,16 @@ export default function AdminInventoryForm() {
                   />
                 </div>
                 <div className='col'>
-                  <Autocomplete
-                    id='disable-clearable'
-                    disableClearable
-                    defaultValue={'Cockatiel'}
-                    options={birdTypes}
-                    getOptionLabel={(option) => option.type}
-                    value={breed}
+                  <TextField
+                    variant='outlined'
+                    margin='dense'
+                    id='type'
+                    type='text'
+                    name='type'
+                    className='form-control'
+                    label='Breed'
+                    placeholder='Enter Breed Here'
                     onChange={(e) => setBreed(e.currentTarget.value)}
-                    style={{ width: 200, margin: '0 auto' }}
-                    renderInput={(params) => (
-                      <TextField
-                        {...params}
-                        variant='outlined'
-                        margin='dense'
-                        id='type'
-                        type='text'
-                        name='type'
-                        className='form-control'
-                        label='Breed'
-                        placeholder='Enter Breed Here'
-                      />
-                    )}
                   />
                 </div>
                 <div className='col'>
@@ -158,29 +144,9 @@ export default function AdminInventoryForm() {
           </form>
           {error && <p>{error}</p>}
           {file && <p>{progress}% uploaded</p>}
-          {url && (
-            <p>
-              <b>File url: </b>
-              <a href={url}>{url}</a>
-            </p>
-          )}
-          {url && <img src={url} alt='source url'></img>}
+          {url && <img src={url} alt='source url' width='200'></img>}
         </Dialog>
       </div>
     </>
   );
 }
-
-// bird types for the options in the form
-const birdTypes = [
-  { type: "Bourke's Parakeet" },
-  { type: 'Budgie' },
-  { type: 'Cockatiel' },
-  { type: 'Finch' },
-  { type: 'Green Cheek Conure' },
-  { type: 'Grey Parrot' },
-  { type: 'Macaw' },
-  { type: 'Nanday Conure' },
-  { type: 'Senegal Parrot' },
-  { type: 'Sun Conure' },
-];
