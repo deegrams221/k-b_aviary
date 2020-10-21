@@ -3,8 +3,7 @@ import React, { useState } from 'react';
 import ContactForm from '../landingpage/ContactForm';
 import InventoryCard from './InventoryCard';
 
-export default function InventoryPage(props) {
-  // const [item, setItems] = useState([]);
+export default function InventoryPage() {
   const [open, setOpen] = useState(false);
 
   const handleClickOpen = () => {

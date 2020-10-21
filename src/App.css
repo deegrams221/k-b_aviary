@@ -34,6 +34,10 @@ body,
   margin: 0 0.5rem;
 }
 
+.inventory-page>.selection {
+  max-width: 20rem;
+}
+
 #content>h1 {
   font-size: 1.8rem;
   max-width: 30rem;
@@ -187,10 +191,6 @@ body,
   margin: 2rem auto;
 }
 
-.vendors {
-  margin: 0 auto;
-}
-
 .cards {
   display: flex;
   flex-wrap: wrap;
@@ -200,8 +200,12 @@ body,
 .cards>.card {
   max-width: 250px;
   margin: 12px;
+  max-height: fit-content;
 }
 
+.vendors {
+  margin: 0 auto;
+}
 
 .vendors>a>img{
   border-radius: 15px 50px;

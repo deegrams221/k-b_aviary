@@ -5,17 +5,64 @@ import {
   DialogTitle,
   TextField,
 } from '@material-ui/core';
+import { Autocomplete } from '@material-ui/lab';
 import React, { useState } from 'react';
+import firebase from '../../firebase';
+import { useStorage } from '../hooks/useStorage';
 
 export default function AdminInventoryForm() {
   const [open, setOpen] = useState(false);
+  // sorting
+  const [breed, setBreed] = useState('');
+  const [inventoryNum, setInventoryNum] = useState('');
+  const [description, setDescription] = useState('');
+  const [, setImgURL] = useState('');
+  const [file, setFile] = useState(null);
+  const [error, setError] = useState(null);
+  const types = ['image/png', 'image/jpeg', 'image/jpg'];
 
+  // image upload
+  const handleChange = (e) => {
+    let selectedFile = e.target.files[0];
+
+    if (selectedFile) {
+      if (types.includes(selectedFile.type)) {
+        setError(null);
+        setFile(selectedFile);
+      } else {
+        setFile(null);
+        setError('Please select an image file (png or jpg)');
+      }
+    }
+  };
+
+  // Getting the progress and url from the hook
+  const { progress, url } = useStorage(file);
+
+  // open the form
   const handleClickOpen = () => {
     setOpen(true);
   };
 
+  // close the form
   const handleClose = () => {
     setOpen(false);
+  };
+
+  // submit the form
+  const onSubmit = (e) => {
+    e.preventDefault();
+
+    firebase
+      .firestore()
+      .collection('Inventory')
+      .add({ breed, inventoryNum, description, image: url })
+      .then(() => {
+        setImgURL('');
+        setBreed('');
+        setInventoryNum('');
+        setDescription('');
+      });
   };
 
   return (
@@ -29,7 +76,7 @@ export default function AdminInventoryForm() {
           onClose={handleClose}
           aria-labelledby='form-dialog-title'
         >
-          <form>
+          <form onSubmit={onSubmit}>
             <div className='form-group'>
               <div className='form-row'>
                 <DialogTitle id='form-dialog-title'>ADD INVENTORY</DialogTitle>
@@ -39,28 +86,45 @@ export default function AdminInventoryForm() {
                     className='form-control'
                     margin='dense'
                     type='file'
+                    onChange={handleChange}
+                  />
+                </div>
+                <div className='col'>
+                  <Autocomplete
+                    id='disable-clearable'
+                    disableClearable
+                    defaultValue={'Cockatiel'}
+                    options={birdTypes}
+                    getOptionLabel={(option) => option.type}
+                    value={breed}
+                    onChange={(e) => setBreed(e.currentTarget.value)}
+                    style={{ width: 200, margin: '0 auto' }}
+                    renderInput={(params) => (
+                      <TextField
+                        {...params}
+                        variant='outlined'
+                        margin='dense'
+                        id='type'
+                        type='text'
+                        name='type'
+                        className='form-control'
+                        label='Breed'
+                        placeholder='Enter Breed Here'
+                      />
+                    )}
                   />
                 </div>
                 <div className='col'>
                   <TextField
                     margin='dense'
-                    id='breed'
-                    type='text'
-                    name='breed'
+                    id='inventoryNum'
                     className='form-control'
-                    label='Breed'
-                    placeholder='Enter Breed Here'
-                  />
-                </div>
-                <div className='col'>
-                  <TextField
-                    margin='dense'
-                    id='inventory-number'
-                    className='form-control'
-                    name='inventory-number'
+                    name='inventoryNum'
                     label='Inventory Number'
                     type='text'
                     placeholder='Enter Inventory Number Here'
+                    value={inventoryNum}
+                    onChange={(e) => setInventoryNum(e.currentTarget.value)}
                   />
                 </div>
               </div>
@@ -68,12 +132,14 @@ export default function AdminInventoryForm() {
             <div className='form-group'>
               <TextField
                 margin='dense'
-                id='descrpiction'
+                id='description'
                 className='form-control'
-                name='descrpiction'
-                label='Descrpiction'
+                name='description'
+                label='Description'
                 type='text'
-                placeholder='Enter Descrpiction Here'
+                placeholder='Enter Description Here'
+                value={description}
+                onChange={(e) => setDescription(e.currentTarget.value)}
               />
             </div>
             <DialogActions>
@@ -90,8 +156,31 @@ export default function AdminInventoryForm() {
               </Button>
             </DialogActions>
           </form>
+          {error && <p>{error}</p>}
+          {file && <p>{progress}% uploaded</p>}
+          {url && (
+            <p>
+              <b>File url: </b>
+              <a href={url}>{url}</a>
+            </p>
+          )}
+          {url && <img src={url} alt='source url'></img>}
         </Dialog>
       </div>
     </>
   );
 }
+
+// bird types for the options in the form
+const birdTypes = [
+  { type: "Bourke's Parakeet" },
+  { type: 'Budgie' },
+  { type: 'Cockatiel' },
+  { type: 'Finch' },
+  { type: 'Green Cheek Conure' },
+  { type: 'Grey Parrot' },
+  { type: 'Macaw' },
+  { type: 'Nanday Conure' },
+  { type: 'Senegal Parrot' },
+  { type: 'Sun Conure' },
+];

@@ -24,7 +24,15 @@ import Home from './components/landingpage/Home';
 //   );
 // };
 
-export default function App() {
+// Testing Firebase Configuration:
+// firebase.firestore().collection('Inventory').add({
+//   description: 'Very sweet little Green Cheek Conure',
+//   inventoryNum: 'GCC134',
+//   type: 'Green Cheek Conure',
+//   url: null,
+// });
+
+export default function App(props) {
   return (
     <>
       <Switch>
