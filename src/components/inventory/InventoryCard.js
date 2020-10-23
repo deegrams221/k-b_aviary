@@ -70,8 +70,9 @@ export default function InventoryCard() {
     setOpen(false);
   };
 
-  const handleDelete = async (id) => {
-    await firebase.firestore().collection('Inventory').doc(id).delete();
+  // delete
+  const handleDelete = (id) => {
+    firebase.firestore().collection('Inventory').doc(id).delete();
     setOpen(false);
   };
 
@@ -94,9 +95,10 @@ export default function InventoryCard() {
               <Typography gutterBottom variant='h5' component='h2'>
                 {inventory.breed}
               </Typography>
-              <Typography variant='body2' color='text' component='p'>
+              <Typography variant='body2' color='textSecondary' component='p'>
                 {inventory.description}
-              </Typography>
+              </Typography>{' '}
+              <br />
               <Typography gutterBottom variant='h6' component='p'>
                 {inventory.inventoryNum}
               </Typography>

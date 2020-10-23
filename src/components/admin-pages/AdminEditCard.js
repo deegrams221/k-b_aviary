@@ -5,26 +5,29 @@ import {
   DialogTitle,
   TextField,
 } from '@material-ui/core';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import firebase from '../../firebase';
 import { useStorage } from '../hooks/useStorage';
 
-export default function AdminEditCard() {
+export default function AdminEditCard(props) {
+  const [editItem, setEditItem] = useState({
+    image: '',
+    breed: '',
+    description: '',
+    inventoryNum: '',
+  });
+  const [, setEditing] = useState([]);
+  // image upload
   const [open, setOpen] = useState(false);
-  const [breed, setBreed] = useState('');
-  const [inventoryNum, setInventoryNum] = useState('');
-  const [description, setDescription] = useState('');
-  const [, setImgURL] = useState('');
   const [file, setFile] = useState(null);
   const [error, setError] = useState(null);
   const types = ['image/png', 'image/jpeg', 'image/jpg'];
 
-  // image upload
-  const handleChange = (e) => {
+  const handleEditChange = (e) => {
     let selectedFile = e.target.files[0];
 
     if (selectedFile) {
-      if (types.includes(selectedFile.type)) {
+      if (types.includes(selectedFile.breed)) {
         setError(null);
         setFile(selectedFile);
       } else {
@@ -37,6 +40,43 @@ export default function AdminEditCard() {
   // Getting the progress and url from the hook
   const { progress, url } = useStorage(file);
 
+  useEffect(() => {
+    let unsubscribe = firebase
+      .firestore()
+      .collection('Inventory')
+      .onSnapshot((snapshot) => {
+        let inventoryItems = snapshot.docs.map((doc) => {
+          return doc.data().navName;
+        });
+        setEditing(inventoryItems);
+      });
+
+    setEditItem({
+      image: props.inventory.image || '',
+      breed: props.inventory.breed || '',
+      description: props.inventory.description || '',
+      inventoryNum: props.inventory.inventoryNum || '',
+    });
+    return unsubscribe;
+  }, []);
+
+  // submit the form
+  const onSubmit = (e) => {
+    e.preventDefault();
+    const response = firebase
+      .firestore()
+      .collection(`Inventory/${editItem.breed}/modules`)
+      .doc(props.inventory.id)
+      .update(editItem);
+    setTimeout(() => {
+      props.closeWindow();
+    }, 1000);
+  };
+
+  const onChange = (e) => {
+    setEditItem({ ...editItem, [e.target.breed]: e.target.value });
+  };
+
   // open the form
   const handleClickOpen = () => {
     setOpen(true);
@@ -45,22 +85,6 @@ export default function AdminEditCard() {
   // close the form
   const handleClose = () => {
     setOpen(false);
-  };
-
-  // submit the form
-  const onSubmit = (e) => {
-    e.preventDefault();
-
-    firebase
-      .firestore()
-      .collection('Inventory')
-      .add({ breed, inventoryNum, description, image: url })
-      .then(() => {
-        setImgURL('');
-        setBreed('');
-        setInventoryNum('');
-        setDescription('');
-      });
   };
 
   return (
@@ -84,7 +108,8 @@ export default function AdminEditCard() {
                     className='form-control'
                     margin='dense'
                     type='file'
-                    onChange={handleChange}
+                    value={editItem.image}
+                    onChange={(handleEditChange, onChange)}
                   />
                 </div>
                 <div className='col'>
@@ -97,7 +122,8 @@ export default function AdminEditCard() {
                     className='form-control'
                     label='Breed'
                     placeholder='Enter Breed Here'
-                    onChange={(e) => setBreed(e.currentTarget.value)}
+                    value={editItem.breed}
+                    onChange={onChange}
                   />
                 </div>
                 <div className='col'>
@@ -109,8 +135,8 @@ export default function AdminEditCard() {
                     label='Inventory Number'
                     type='text'
                     placeholder='Enter Inventory Number Here'
-                    value={inventoryNum}
-                    onChange={(e) => setInventoryNum(e.currentTarget.value)}
+                    value={editItem.inventoryNum}
+                    onChange={onChange}
                   />
                 </div>
               </div>
@@ -124,8 +150,8 @@ export default function AdminEditCard() {
                 label='Description'
                 type='text'
                 placeholder='Enter Description Here'
-                value={description}
-                onChange={(e) => setDescription(e.currentTarget.value)}
+                value={editItem.description}
+                onChange={onChange}
               />
             </div>
             <DialogActions>
@@ -137,14 +163,19 @@ export default function AdminEditCard() {
               >
                 Submit
               </Button>
-              <Button onClick={handleClose} color='secondary'>
+              <Button
+                onClick={(() => setEditing(false), handleClose)}
+                color='secondary'
+              >
                 Cancel
               </Button>
             </DialogActions>
           </form>
           {error && <p>{error}</p>}
           {file && <p>{progress}% uploaded</p>}
-          {url && <img src={url} alt='source url' width='200'></img>}
+          {url && (
+            <img src={url} alt='source url' width='200' height='200'></img>
+          )}
         </Dialog>
       </div>
     </>

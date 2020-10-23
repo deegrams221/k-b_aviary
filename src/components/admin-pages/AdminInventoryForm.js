@@ -144,7 +144,9 @@ export default function AdminInventoryForm() {
           </form>
           {error && <p>{error}</p>}
           {file && <p>{progress}% uploaded</p>}
-          {url && <img src={url} alt='source url' width='200'></img>}
+          {url && (
+            <img src={url} alt='source url' width='200' height='200'></img>
+          )}
         </Dialog>
       </div>
     </>
