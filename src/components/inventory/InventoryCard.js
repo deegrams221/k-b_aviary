@@ -1,31 +1,30 @@
 import {
-  Backdrop,
   Button,
   Card,
   CardActions,
   CardContent,
   CardMedia,
-  Fade,
-  makeStyles,
-  Modal,
+  // Fade,
+  // makeStyles,
+  // Modal,
   Typography,
 } from '@material-ui/core';
 import React, { useEffect, useState } from 'react';
 import firebase from '../../firebase';
 import AdminEditCard from '../admin-pages/AdminEditCard';
 
-const useStyles = makeStyles((theme) => ({
-  modal: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  paper: {
-    backgroundColor: theme.palette.background.paper,
-    boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 4, 3),
-  },
-}));
+// const useStyles = makeStyles((theme) => ({
+//   modal: {
+//     display: 'flex',
+//     alignItems: 'center',
+//     justifyContent: 'center',
+//   },
+//   paper: {
+//     backgroundColor: theme.palette.background.paper,
+//     boxShadow: theme.shadows[5],
+//     padding: theme.spacing(2, 4, 3),
+//   },
+// }));
 
 // sorting
 const SORT_OPTIONS = {
@@ -36,44 +35,43 @@ const useInventory = (sortBy = 'TYPE_ASC') => {
   const [inventory, setInventory] = useState([]);
 
   useEffect(() => {
-    const unsubscribe = firebase
+    firebase
       .firestore()
       .collection('Inventory')
       .orderBy(SORT_OPTIONS[sortBy].column, SORT_OPTIONS[sortBy].direction)
       .onSnapshot((snapshot) => {
         // debugger;
-        const newInventory = snapshot.docs.map((doc) => ({
+        const getInventory = snapshot.docs.map((doc) => ({
           id: doc.id,
           ...doc.data(),
         }));
-        setInventory(newInventory);
+        setInventory(getInventory);
       });
-
-    return () => unsubscribe();
   }, [sortBy]);
 
   return inventory;
 };
 
 export default function InventoryCard() {
-  const classes = useStyles();
-  const [open, setOpen] = useState(false);
+  // const classes = useStyles();
+  // const [open, setOpen] = useState(false);
   // sorting
   const [sortBy] = useState('TYPE_ASC');
   const inventory = useInventory(sortBy);
 
-  const handleOpen = () => {
-    setOpen(true);
-  };
+  // const handleOpen = () => {
+  //   setOpen(true);
+  // };
 
-  const handleClose = () => {
-    setOpen(false);
-  };
+  // const handleClose = () => {
+  //   setOpen(false);
+  // };
 
   // delete
-  const handleDelete = (id) => {
+  const deleteItem = (id) => {
     firebase.firestore().collection('Inventory').doc(id).delete();
-    setOpen(false);
+    // setOpen(false);
+    console.log('id: ', id);
   };
 
   return (
@@ -104,16 +102,21 @@ export default function InventoryCard() {
               </Typography>
             </CardContent>
             <CardActions>
-              {/* {inventory.breed === 'admin' &&  */}
+              {/* {user === 'admin' &&  */}
               <AdminEditCard />
               {/* } */}
-              {/* {inventory.breed === 'admin' && ( */}
-              <Button size='small' color='secondary' onClick={handleOpen}>
+              {/* {user === 'admin' && ( */}
+              {/* <Button size='small' color='secondary' onClick={handleOpen}> */}
+              <Button
+                size='small'
+                color='secondary'
+                onClick={() => deleteItem(inventory.id)}
+              >
                 Delete
               </Button>
               {/* )} */}
               {/* Pop up window on Delete */}
-              <Modal
+              {/* <Modal
                 className={classes.modal}
                 aria-labelledby='transition-modal-title'
                 aria-describedby='transition-modal-description'
@@ -130,7 +133,7 @@ export default function InventoryCard() {
                     <Button
                       className='confirmDelete'
                       color='primary'
-                      onClick={() => handleDelete(inventory.id)}
+                      onClick={() => deleteItem(inventory.id)}
                     >
                       Confirm
                     </Button>
@@ -139,7 +142,7 @@ export default function InventoryCard() {
                     </Button>
                   </div>
                 </Fade>
-              </Modal>
+              </Modal> */}
             </CardActions>
           </Card>
         ))}
