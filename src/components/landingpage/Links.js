@@ -17,17 +17,17 @@ export default function Links() {
           />
         </a>
         {/* Facebook */}
-        <a
+        {/* <a
           target='_blank'
           rel='noopener noreferrer'
           title='follow me on facebook'
           href='https://www.facebook.com/PLACEHOLDER'
-        >
-          <img
-            alt='follow me on facebook'
-            src='https://c866088.ssl.cf3.rackcdn.com/assets/facebook30x30.png'
-          />
-        </a>
+        > */}
+        <img
+          alt='follow me on facebook'
+          src='https://c866088.ssl.cf3.rackcdn.com/assets/facebook30x30.png'
+        />
+        {/* </a> */}
         {/* Instagram */}
         <a
           target='_blank'
