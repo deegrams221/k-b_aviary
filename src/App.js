@@ -32,7 +32,7 @@ import Home from './components/landingpage/Home';
 //   url: null,
 // });
 
-export default function App(props) {
+export default function App() {
   return (
     <>
       <Switch>
