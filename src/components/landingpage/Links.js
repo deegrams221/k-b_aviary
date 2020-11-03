@@ -6,6 +6,7 @@ export default function Links() {
       <div className='links'>
         {/* Twitter */}
         <a
+          className='twitter'
           target='_blank'
           rel='noopener noreferrer'
           title='follow me on Twitter'
@@ -18,10 +19,11 @@ export default function Links() {
         </a>
         {/* Facebook */}
         <a
-        // target='_blank'
-        // rel='noopener noreferrer'
-        // title='follow me on facebook'
-        // href='https://www.facebook.com/PLACEHOLDER'
+          className='facebook'
+          target='_blank'
+          rel='noopener noreferrer'
+          title='follow me on facebook'
+          href='https://www.facebook.com/PLACEHOLDER'
         >
           <img
             alt='follow me on facebook'
@@ -30,6 +32,7 @@ export default function Links() {
         </a>
         {/* Instagram */}
         <a
+          className='instagram'
           target='_blank'
           rel='noopener noreferrer'
           title='follow me on instagram'

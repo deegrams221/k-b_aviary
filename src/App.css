@@ -33,6 +33,9 @@ body,
   font-size: 18px;
   margin: 0 0.5rem;
 }
+.links>.facebook {
+  pointer-events: none;
+}
 
 .inventory-page>.selection {
   max-width: 20rem;
