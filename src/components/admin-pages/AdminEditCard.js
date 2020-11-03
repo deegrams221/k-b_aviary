@@ -5,81 +5,28 @@ import {
   DialogTitle,
   TextField,
 } from '@material-ui/core';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import firebase from '../../firebase';
-import { useStorage } from '../hooks/useStorage';
 
-export default function AdminEditCard(props) {
-  const [editItem, setEditItem] = useState({
-    image: '',
-    breed: '',
-    description: '',
-    inventoryNum: '',
-  });
-  const [, setEditing] = useState([]);
-  // image upload
+export default function AdminEditCard() {
   const [open, setOpen] = useState(false);
-  const [file, setFile] = useState(null);
-  const [error, setError] = useState(null);
-  const types = ['image/png', 'image/jpeg', 'image/jpg'];
+  const [inventory] = useState('');
+  const [update, setUpdate] = useState('');
+  const [toUpdateId, setToUpdateId] = useState('');
 
-  const handleEditChange = (e) => {
-    let selectedFile = e.target.files[0];
-
-    if (selectedFile) {
-      if (types.includes(selectedFile.breed)) {
-        setError(null);
-        setFile(selectedFile);
-      } else {
-        setFile(null);
-        setError('Please select an image file (png or jpg)');
-      }
-    }
-  };
-
-  // Getting the progress and url from the hook
-  const { progress, url } = useStorage(file);
-
-  useEffect(() => {
-    let unsubscribe = firebase
-      .firestore()
-      .collection('Inventory')
-      .onSnapshot((snapshot) => {
-        let inventoryItems = snapshot.docs.map((doc) => {
-          return doc.data().navName;
-        });
-        setEditing(inventoryItems);
-      });
-
-    setEditItem({
-      image: props.inventory.image || '',
-      breed: props.inventory.breed || '',
-      description: props.inventory.description || '',
-      inventoryNum: props.inventory.inventoryNum || '',
-    });
-    return unsubscribe;
-  }, []);
-
-  // submit the form
-  const onSubmit = (e) => {
-    e.preventDefault();
-    const response = firebase
-      .firestore()
-      .collection(`Inventory/${editItem.breed}/modules`)
-      .doc(props.inventory.id)
-      .update(editItem);
-    setTimeout(() => {
-      props.closeWindow();
-    }, 1000);
-  };
-
-  const onChange = (e) => {
-    setEditItem({ ...editItem, [e.target.breed]: e.target.value });
-  };
-
-  // open the form
-  const handleClickOpen = () => {
+  // open update form
+  const openUpdateDialog = (inventory) => {
     setOpen(true);
+    setToUpdateId(inventory.id);
+    setUpdate(inventory.breed, inventory.inventoryNum, inventory.description);
+  };
+
+  // save update
+  const updateInventory = () => {
+    firebase.firestore().collection('Inventory').doc(toUpdateId).update({
+      inventory: update,
+    });
+    setOpen(false);
   };
 
   // close the form
@@ -90,28 +37,24 @@ export default function AdminEditCard(props) {
   return (
     <>
       <div className='contact-btn'>
-        <Button className='button' color='default' onClick={handleClickOpen}>
-          EDIT
+        <Button
+          className='button'
+          color='default'
+          onClick={openUpdateDialog(inventory)}
+        >
+          UPDATE
         </Button>
         <Dialog
           open={open}
           onClose={handleClose}
           aria-labelledby='form-dialog-title'
         >
-          <form onSubmit={onSubmit}>
+          <form>
             <div className='form-group'>
               <div className='form-row'>
-                <DialogTitle id='form-dialog-title'>EDIT</DialogTitle>
-                <div className='col'>
-                  <TextField
-                    name='upload-photo'
-                    className='form-control'
-                    margin='dense'
-                    type='file'
-                    value={editItem.image}
-                    onChange={(handleEditChange, onChange)}
-                  />
-                </div>
+                <DialogTitle id='form-dialog-title'>
+                  UPDATE {inventory.inventoryNum}
+                </DialogTitle>
                 <div className='col'>
                   <TextField
                     variant='outlined'
@@ -122,8 +65,8 @@ export default function AdminEditCard(props) {
                     className='form-control'
                     label='Breed'
                     placeholder='Enter Breed Here'
-                    value={editItem.breed}
-                    onChange={onChange}
+                    value={update}
+                    onChange={(event) => setUpdate(event.target.value)}
                   />
                 </div>
                 <div className='col'>
@@ -135,8 +78,8 @@ export default function AdminEditCard(props) {
                     label='Inventory Number'
                     type='text'
                     placeholder='Enter Inventory Number Here'
-                    value={editItem.inventoryNum}
-                    onChange={onChange}
+                    value={update}
+                    onChange={(event) => setUpdate(event.target.value)}
                   />
                 </div>
               </div>
@@ -150,32 +93,24 @@ export default function AdminEditCard(props) {
                 label='Description'
                 type='text'
                 placeholder='Enter Description Here'
-                value={editItem.description}
-                onChange={onChange}
+                value={update}
+                onChange={(event) => setUpdate(event.target.value)}
               />
             </div>
             <DialogActions>
               <Button
-                onClick={handleClose}
+                onClick={updateInventory}
                 color='primary'
                 type='submit'
                 className='btn btn-lg btn-dark btn-block'
               >
-                Submit
+                Save
               </Button>
-              <Button
-                onClick={(() => setEditing(false), handleClose)}
-                color='secondary'
-              >
+              <Button onClick={handleClose} color='secondary'>
                 Cancel
               </Button>
             </DialogActions>
           </form>
-          {error && <p>{error}</p>}
-          {file && <p>{progress}% uploaded</p>}
-          {url && (
-            <img src={url} alt='source url' width='200' height='200'></img>
-          )}
         </Dialog>
       </div>
     </>

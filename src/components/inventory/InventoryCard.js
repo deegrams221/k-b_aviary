@@ -8,7 +8,6 @@ import {
 } from '@material-ui/core';
 import React, { useEffect, useState } from 'react';
 import firebase from '../../firebase';
-import AdminEditCard from '../admin-pages/AdminEditCard';
 
 // sorting
 const SORT_OPTIONS = {
@@ -75,7 +74,10 @@ export default function InventoryCard() {
             </CardContent>
             <CardActions>
               {/* {user === 'admin' &&  */}
-              <AdminEditCard />
+              {/* <AdminEditCard /> */}
+              <Button size='small' color='primary'>
+                Update
+              </Button>
               {/* } */}
               {/* {user === 'admin' && ( */}
               <Button
