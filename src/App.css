@@ -34,6 +34,10 @@ body,
   margin: 0 0.5rem;
 }
 
+.links > .facebook {
+  pointer-events: none;
+}
+
 #content > h1 {
   font-size: 1.8rem;
   max-width: 30rem;
