@@ -13,7 +13,7 @@ import React, { useState } from 'react';
 import { Redirect } from 'react-router-dom';
 import * as Yup from 'yup';
 
-const AdminLogin = ({ errors, touched, status, props }) => {
+const AdminLogin = ({ errors, touched }) => {
   const { from } = { from: { pathname: '/' } };
   console.log(from);
   const [redirectToReferrer, setRedirectToReferrer] = useState(false);
