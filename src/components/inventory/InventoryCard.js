@@ -1,13 +1,13 @@
 import {
-  Button,
   Card,
-  CardActions,
+  // CardActions,
   CardContent,
   CardMedia,
   Typography,
 } from '@material-ui/core';
 import React, { useEffect, useState } from 'react';
 import firebase from '../../firebase';
+// import AdminEditCard from '../admin-pages/AdminEditCard';
 
 // sorting
 const SORT_OPTIONS = {
@@ -40,10 +40,9 @@ export default function InventoryCard() {
   const inventory = useInventory(sortBy);
 
   // delete
-  const deleteItem = (id) => {
-    firebase.firestore().collection('Inventory').doc(id).delete();
-    // console.log('delete id: ', id);
-  };
+  // const deleteItem = (id) => {
+  //   firebase.firestore().collection('Inventory').doc(id).delete();
+  // };
 
   return (
     <>
@@ -72,23 +71,25 @@ export default function InventoryCard() {
                 {inventory.inventoryNum}
               </Typography>
             </CardContent>
-            <CardActions>
-              {/* {user === 'admin' &&  */}
-              {/* <AdminEditCard /> */}
-              <Button size='small' color='primary'>
-                Update
-              </Button>
-              {/* } */}
-              {/* {user === 'admin' && ( */}
-              <Button
-                size='small'
-                color='secondary'
-                onClick={() => deleteItem(inventory.id)}
-              >
-                Delete
-              </Button>
-              {/* )} */}
-            </CardActions>
+            {/* <CardActions>
+              {user === 'admin' &&
+              <AdminEditCard />
+              }
+              {user === 'admin' && (
+                <Button size='small' color='primary'>
+                  Update
+                </Button>
+              )}
+              {user === 'admin' && (
+                <Button
+                  size='small'
+                  color='secondary'
+                  onClick={() => deleteItem(inventory.id)}
+                >
+                  Delete
+                </Button>
+              )}
+            </CardActions> */}
           </Card>
         ))}
       </div>
