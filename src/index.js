@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
 import App from './App';
+import { firebase, firebaseConfig } from './firebase';
 import './index.css';
 
 ReactDOM.render(
-  <Router>
+  <firebaseConfig.Provider value={new firebase()}>
     <App />
-  </Router>,
+  </firebaseConfig.Provider>,
   document.getElementById('root')
 );

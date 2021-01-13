@@ -14,12 +14,12 @@ import { Redirect } from 'react-router-dom';
 import * as Yup from 'yup';
 
 const AdminLogin = ({ errors, touched }) => {
-  const { from } = { from: { pathname: '/' } };
-  console.log(from);
+  const { from } = { from: { pathname: '/inventory' } };
+
   const [redirectToReferrer, setRedirectToReferrer] = useState(false);
 
   const login = () => {
-    fakeAuth.authenticate(() => {
+    auth.authenticate(() => {
       setRedirectToReferrer(true);
     });
   };
@@ -117,7 +117,10 @@ const FormikAdminLogin = withFormik({
     console.log(values);
     // Post Placeholder
     axios
-      .post('', values)
+      .post(
+        'https://identitytoolkit.googleapis.com/v1/accounts:signInWithCustomToken?key=[AIzaSyAe7bn0IXLuugTa1yccJxjpCMdC8T0El18]',
+        values
+      )
       .then((res) => {
         setStatus(res.data);
       })
@@ -127,7 +130,7 @@ const FormikAdminLogin = withFormik({
 
 export default FormikAdminLogin;
 
-export const fakeAuth = {
+export const auth = {
   isAuthenticated: false,
   authenticate(cb) {
     this.isAuthenticated = true;

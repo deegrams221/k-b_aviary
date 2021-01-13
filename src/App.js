@@ -1,46 +1,36 @@
 import React from 'react';
-import { Redirect, Route, Switch } from 'react-router-dom';
-import './App.css';
-import AdminInventoryPage from './components/admin-pages/AdminInventoryPage.js';
-import {
-  default as AdminLogin,
-  default as fakeAuth,
-} from './components/admin-pages/AdminLogin';
-import Home from './components/landingpage/Home';
-import firebase from './firebase';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import * as ROUTES from '../../constants/routes';
+import AccountPage from '../Account';
+import AdminPage from '../Admin';
+import HomePage from '../Home';
+import LandingPage from '../Landing';
+import Navigation from '../Navigation';
+import PasswordForgetPage from '../PasswordForget';
+import { withAuthentication } from '../Session';
+import SignInPage from '../SignIn';
+import SignUpPage from '../SignUp';
 
-const PrivateRoute = ({ component: Component, ...rest }) => {
-  return (
-    <Route
-      {...rest}
-      render={(props) =>
-        fakeAuth.isAuthenticated === true ? (
-          <Component {...props} />
-        ) : (
-          <Redirect to={{ pathname: '/admin', state: { from: '/' } }} />
-        )
-      }
-    />
-  );
-};
+const App = () => (
+  <Router>
+    <div>
+      <Navigation />
 
-// Testing Firebase Configuration:
-firebase.firestore().collection('Inventory').add({
-  description: 'Very sweet little Green Cheek Conure',
-  inventoryNum: 'GCC134',
-  type: 'Green Cheek Conure',
-  url: null,
-});
+      <hr />
 
-export default function App() {
-  return (
-    <>
-      <Switch>
-        <Route exact path='/' component={Home} />
-        <Route path='/admin' component={AdminLogin} />
-        <PrivateRoute path='/inventory' component={AdminInventoryPage} />
-        {/* <Route path='/inventory' component={AdminInventoryPage} /> */}
-      </Switch>
-    </>
-  );
-}
+      <Route exact path={ROUTES.LANDING} component={LandingPage} />
+      <Route exact path={ROUTES.SIGN_UP} component={SignUpPage} />
+      <Route exact path={ROUTES.SIGN_IN} component={SignInPage} />
+      <Route
+        exact
+        path={ROUTES.PASSWORD_FORGET}
+        component={PasswordForgetPage}
+      />
+      <Route exact path={ROUTES.HOME} component={HomePage} />
+      <Route exact path={ROUTES.ACCOUNT} component={AccountPage} />
+      <Route exact path={ROUTES.ADMIN} component={AdminPage} />
+    </div>
+  </Router>
+);
+
+export default withAuthentication(App);
