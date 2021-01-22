@@ -15,15 +15,15 @@ Find the deployed project at https://kbaviary.com/
 This site was built for a bird breeder with the intention to showcase her birds and provide an easy way for potential clients to contact her.
 <br>
 
-### Current version: 1.0
+### Version: 1.0
 
 Single page webpage with the client provided information, images, and video. Contact form that routes messaged directly to the client's email. Links to the client's various social media pages. Formated for desktop, tablet, and mobile views.
 
-### Plan for version 2.0:
+### Current version: 2.0
 
 The client would like to have a login, once logged in the client will be able to upload images and descriptions of the birds they have available for purchase in an 'inventory' page. Users will be able to view the inventory but will not be able to login. Also plan to create a backend in Firebase, so the client can easily upload and maintain the artifacts.
 
-### Plan for version 3.0:
+### Plan for version: 3.0
 Add a page for the client's verified customers to leave Reviews and Testimonials.
 
 ### Technology Used:
