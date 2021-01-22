@@ -24,7 +24,7 @@ export default function Vendors() {
       >
         <img
           alt='Fancy Feather Bird Farm'
-          src='http://fancyfeathers.net/images/logo6s.jpg'
+          src={require('../../images/Fancy-Feathers.png')}
         />
       </a>
       {/* Laraine's Lady Gouldians */}
@@ -36,7 +36,7 @@ export default function Vendors() {
       >
         <img
           alt='Laraines Lady Gouldians'
-          src='https://ladygouldian.com/files/FinchFamily_wText_low%205.jpg'
+          src={require('../../images/Lady-Gouldian.png')}
         />
       </a>
     </div>
