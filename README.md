@@ -35,7 +35,11 @@ Deployed using `Netlify`
 ### Key Features
 
 - Client Contact Form
-- Client Business Information (with images and video)
+- Client Business Information (with images and links)
+- Product Inventory
+- Client Login
+- Inventory Upload Form - Only accessible by the client
+- Inventory Delete Functionality - Only accessible by the client
 
 # Installation Instructions
 
