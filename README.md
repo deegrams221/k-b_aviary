@@ -17,7 +17,7 @@ This site was built for a bird breeder with the intention to showcase her birds 
 
 ### Version: 1.0
 
-Single page webpage with the client provided information, images, and video. Contact form that routes messaged directly to the client's email. Links to the client's various social media pages. Formated for desktop, tablet, and mobile views.
+Single page webpage with the client provided information, and images. Contact form that routes messages directly to the client's email. Links to the client's various social media pages. Links to the client's preferred vendors. Formatted for desktop, tablet, and mobile views.
 
 ### Current version: 2.0
 
