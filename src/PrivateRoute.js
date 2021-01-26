@@ -13,7 +13,7 @@ const PrivateRoute = ({ component: Component, isLoggedIn, ...rest }) => {
       />
     );
   }
-  return <Redirect to={{ pathname: '/admin' }} />;
+  return <Redirect to={{ pathname: '/' }} />;
 };
 
 PrivateRoute.propTypes = {

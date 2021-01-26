@@ -49,7 +49,6 @@ const AdminLogin = ({ history }) => {
           .auth()
           .signInWithPopup(provider)
           .then((result) => {
-            console.log(result);
             history.push('/admin');
             Auth.setLoggedIn(true);
           })
