@@ -14,7 +14,7 @@ import { Redirect } from 'react-router-dom';
 import * as Yup from 'yup';
 
 const AdminLogin = ({ errors, touched }) => {
-  const { from } = { from: { pathname: '/inventory' } };
+  const { from } = { from: { pathname: '/' } };
 
   const [redirectToReferrer, setRedirectToReferrer] = useState(false);
 
@@ -27,6 +27,7 @@ const AdminLogin = ({ errors, touched }) => {
   if (redirectToReferrer) {
     return <Redirect to={from} />;
   }
+
   return (
     <>
       <div className='contact-btn'>
