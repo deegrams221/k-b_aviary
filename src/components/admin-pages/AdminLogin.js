@@ -48,11 +48,13 @@ const AdminLogin = ({ history }) => {
         firebase
           .auth()
           .signInWithPopup(provider)
-          .then((result) => {
+          .then((res) => {
+            if (res.user) Auth.setLoggedIn(true);
             history.push('/admin');
-            Auth.setLoggedIn(true);
           })
-          .catch((e) => setErrors(e.message));
+          .catch((e) => {
+            setErrors(e.message);
+          });
       });
   };
 
