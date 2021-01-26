@@ -7,31 +7,60 @@ import {
   FormControlLabel,
   TextField,
 } from '@material-ui/core';
-import axios from 'axios';
-import { withFormik } from 'formik';
-import React, { useState } from 'react';
-import { Redirect } from 'react-router-dom';
-import * as Yup from 'yup';
+import React, { useContext, useState } from 'react';
+import { withRouter } from 'react-router-dom';
+import { AuthContext } from '../../App';
+import firebase from '../../firebase';
 
-const AdminLogin = ({ errors, touched }) => {
-  const { from } = { from: { pathname: '/' } };
+const AdminLogin = ({ history }) => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [, setErrors] = useState('');
 
-  const [redirectToReferrer, setRedirectToReferrer] = useState(false);
+  const Auth = useContext(AuthContext);
 
-  const login = () => {
-    auth.authenticate(() => {
-      setRedirectToReferrer(true);
-    });
+  const handleForm = (e) => {
+    e.preventDefault();
+    console.log(Auth);
+    firebase
+      .auth()
+      .setPersistence(firebase.auth.Auth.Persistence.SESSION)
+      .then(() => {
+        firebase
+          .auth()
+          .signInWithEmailAndPassword(email, password)
+          .then((res) => {
+            if (res.user) Auth.setLoggedIn(true);
+            history.push('/admin');
+          })
+          .catch((e) => {
+            setErrors(e.message);
+          });
+      });
   };
 
-  if (redirectToReferrer) {
-    return <Redirect to={from} />;
-  }
+  const signInWithGoogle = () => {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    firebase
+      .auth()
+      .setPersistence(firebase.auth.Auth.Persistence.SESSION)
+      .then(() => {
+        firebase
+          .auth()
+          .signInWithPopup(provider)
+          .then((result) => {
+            console.log(result);
+            history.push('/admin');
+            Auth.setLoggedIn(true);
+          })
+          .catch((e) => setErrors(e.message));
+      });
+  };
 
   return (
     <>
       <div className='contact-btn'>
-        <form noValidate>
+        <form onSubmit={(e) => handleForm(e)}>
           <div className='form-group'>
             <div className='form-row'>
               <DialogTitle id='form-dialog-title'>ADMIN LOGIN</DialogTitle>
@@ -43,9 +72,6 @@ const AdminLogin = ({ errors, touched }) => {
               </DialogContent>
             </div>
             <div className='col'>
-              {errors.email && touched.email && (
-                <p className='error'>{errors.email}</p>
-              )}
               <TextField
                 margin='dense'
                 required
@@ -56,17 +82,18 @@ const AdminLogin = ({ errors, touched }) => {
                 autoComplete='email'
                 autoFocus
                 placeholder='Enter Email Here'
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
             <div className='col'>
-              {errors.password && touched.password && (
-                <p className='error'>{errors.password}</p>
-              )}
               <TextField
                 margin='dense'
                 required
                 className='form-control'
+                onChange={(e) => setPassword(e.target.value)}
                 name='password'
+                value={password}
                 label='Password'
                 type='password'
                 id='password'
@@ -82,13 +109,22 @@ const AdminLogin = ({ errors, touched }) => {
             </div>
             <div className='col'>
               <Button
-                onClick={login}
                 color='default'
                 variant='outlined'
                 type='submit'
                 className='btn btn-lg btn-dark btn-block'
               >
                 Login
+              </Button>
+              <br />
+              <Button
+                onClick={() => signInWithGoogle()}
+                color='default'
+                variant='outlined'
+                className='btn btn-lg btn-dark btn-block'
+                type='button'
+              >
+                Login With Google
               </Button>
             </div>
           </div>
@@ -98,43 +134,4 @@ const AdminLogin = ({ errors, touched }) => {
   );
 };
 
-const FormikAdminLogin = withFormik({
-  mapPropsToValues({ email, password }) {
-    return {
-      email: email || '',
-      password: password || '',
-    };
-  },
-
-  // Validation Schema
-  validationSchema: Yup.object().shape({
-    email: Yup.string().email('Email not valid').required('Email is required'),
-    password: Yup.string()
-      .min(6, 'Password must be at least 6 characters')
-      .required('Password is required'),
-  }),
-
-  handleSubmit(values, { setStatus }) {
-    console.log(values);
-    // Post Placeholder
-    axios
-      .post(
-        'https://identitytoolkit.googleapis.com/v1/accounts:signInWithCustomToken?key=[AIzaSyAe7bn0IXLuugTa1yccJxjpCMdC8T0El18]',
-        values
-      )
-      .then((res) => {
-        setStatus(res.data);
-      })
-      .catch((error) => console.log(error.response));
-  },
-})(AdminLogin);
-
-export default FormikAdminLogin;
-
-export const auth = {
-  isAuthenticated: false,
-  authenticate(cb) {
-    this.isAuthenticated = true;
-    setTimeout(cb, 100);
-  },
-};
+export default withRouter(AdminLogin);

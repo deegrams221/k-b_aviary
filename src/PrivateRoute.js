@@ -1,21 +1,26 @@
+import { any, bool, object } from 'prop-types';
 import React from 'react';
-import { Redirect, Route } from 'react-router-dom';
+import { Redirect, Route, withRouter } from 'react-router-dom';
 
-function PrivateRoute({ component: Component, authenticated, ...rest }) {
-  return (
-    <Route
-      {...rest}
-      render={(props) =>
-        authenticated === true ? (
-          <Component {...props} />
-        ) : (
-          <Redirect
-            to={{ pathname: '/login', state: { from: props.location } }}
-          />
-        )
-      }
-    />
-  );
-}
+const PrivateRoute = ({ component: Component, isLoggedIn, ...rest }) => {
+  if (isLoggedIn || rest.public) {
+    return (
+      <Route
+        {...rest}
+        render={(props) => {
+          return <Component {...props}></Component>;
+        }}
+      />
+    );
+  }
+  return <Redirect to={{ pathname: '/admin' }} />;
+};
 
-export default PrivateRoute;
+PrivateRoute.propTypes = {
+  component: any,
+  isLoggedIn: bool,
+  rest: object,
+  props: object,
+};
+
+export default withRouter(PrivateRoute);
