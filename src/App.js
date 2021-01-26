@@ -7,20 +7,18 @@ import Home from './components/landingpage/Home';
 import PrivateRoute from './PrivateRoute';
 
 const App = () => {
-  const [authenticated, setAuthenticated] = useState(false);
+  const [, setAuthenticated] = useState(false);
   return (
     <Router>
       <Switch>
-        <div>
-          <Route exact path={ROUTES.LOGIN} component={AdminLogin} />
-          <Route exact path={ROUTES.HOME} component={Home} />
-          <PrivateRoute
-            exact
-            path={ROUTES.ADMIN}
-            authenticated={setAuthenticated}
-            component={AdminInventoryPage}
-          />
-        </div>
+        <Route exact path={ROUTES.LOGIN} component={AdminLogin} />
+        <Route exact path={ROUTES.HOME} component={Home} />
+        <PrivateRoute
+          exact
+          path={ROUTES.ADMIN}
+          authenticated={setAuthenticated}
+          component={AdminInventoryPage}
+        />
       </Switch>
     </Router>
   );
