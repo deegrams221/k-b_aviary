@@ -6,9 +6,11 @@ import {
   CardMedia,
   Typography,
 } from '@material-ui/core';
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+// import React, { useEffect, useState } from 'react';
+import { AuthContext } from '../../App';
 import { default as firebase } from '../../firebase';
-import AdminEditCard from '../admin-pages/AdminEditCard';
+// import AdminEditCard from '../admin-pages/AdminEditCard';
 
 // sorting
 const SORT_OPTIONS = {
@@ -36,9 +38,18 @@ const useInventory = (sortBy = 'TYPE_ASC') => {
   return inventory;
 };
 
-export default function InventoryCard({ isLoggedIn }) {
+const InventoryCard = () => {
   const [sortBy] = useState('TYPE_ASC');
   const inventory = useInventory(sortBy);
+
+  const Auth = useContext(AuthContext);
+
+  // check if user is logged in
+  const loggedIn = () => {
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) Auth.setLoggedIn(true);
+    });
+  };
 
   // delete
   const deleteItem = (id) => {
@@ -73,8 +84,8 @@ export default function InventoryCard({ isLoggedIn }) {
               </Typography>
             </CardContent>
             <CardActions>
-              {isLoggedIn && <AdminEditCard />}
-              {isLoggedIn && (
+              {/* {user && <AdminEditCard />} */}
+              {loggedIn && (
                 <Button
                   size='small'
                   color='secondary'
@@ -89,4 +100,6 @@ export default function InventoryCard({ isLoggedIn }) {
       </div>
     </>
   );
-}
+};
+
+export default InventoryCard;
