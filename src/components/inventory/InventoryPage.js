@@ -1,6 +1,8 @@
 import { Button, Dialog, DialogActions } from '@material-ui/core';
 import React, { useState } from 'react';
+import Logo from '../../images/logo1.jpg';
 import ContactForm from '../landingpage/ContactForm';
+import InventoryCard from './InventoryCard';
 
 export default function InventoryPage() {
   const [open, setOpen] = useState(false);
@@ -24,15 +26,20 @@ export default function InventoryPage() {
           onClose={handleClose}
           aria-labelledby='form-dialog-title'
           fullWidth={true}
+          className='dialog'
         >
-          <h1>Inventory</h1>
-          <h2>Coming Soon!</h2>
-          <DialogActions>
-            <Button onClick={handleClose} color='default'>
-              Cancel
-            </Button>
-            <ContactForm />
-          </DialogActions>
+          <div className='inventory-content'>
+            <img src={Logo} alt='KB Aviary Logo' width={200} />
+            <h1>Inventory</h1>
+            <h2>Coming Soon!</h2>
+            <InventoryCard />
+            <DialogActions>
+              <Button onClick={handleClose} color='default'>
+                Cancel
+              </Button>
+              <ContactForm />
+            </DialogActions>
+          </div>
         </Dialog>
       </div>
     </>

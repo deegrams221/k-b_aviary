@@ -8,6 +8,10 @@ body,
   background-color: #e6e6e6;
 }
 
+h1 {
+  margin-top: 0;
+}
+
 .header {
   display: flex;
   flex-direction: row;
@@ -32,6 +36,9 @@ body,
   font-weight: bold;
   font-size: 18px;
   margin: 0 0.5rem;
+}
+.links > .facebook {
+  pointer-events: none;
 }
 
 .links > .facebook {
@@ -117,6 +124,11 @@ body,
 
 #content > .container > .subcontainer > .buttons {
   margin-top: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  width: 23rem;
+  justify-content: space-between;
+  /* border: blue solid 1px; */
 }
 
 #content > .container-two {
@@ -193,6 +205,18 @@ body,
   border-bottom: #2f553e solid 5px;
   max-width: 16rem;
   margin: 2rem auto;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cards > .card {
+  max-width: 250px;
+  margin: 12px;
+  max-height: max-content;
 }
 
 .vendors {
@@ -315,6 +339,11 @@ body,
 
   #content > .container > .subcontainer > .content-four {
     margin: 0 0 20px 0;
+  }
+
+  #content > .container > .subcontainer > .buttons {
+    flex-direction: column;
+    width: 10rem;
   }
 
   #content > .container-two {
