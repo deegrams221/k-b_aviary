@@ -16,12 +16,10 @@ const AdminLogin = ({ history }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [, setErrors] = useState('');
-
   const Auth = useContext(AuthContext);
 
   const handleForm = (e) => {
     e.preventDefault();
-    console.log(Auth);
     firebase
       .auth()
       .setPersistence(firebase.auth.Auth.Persistence.SESSION)
@@ -40,11 +38,11 @@ const AdminLogin = ({ history }) => {
   };
 
   const signInWithGoogle = () => {
-    const provider = new firebase.auth.GoogleAuthProvider();
     firebase
       .auth()
       .setPersistence(firebase.auth.Auth.Persistence.SESSION)
       .then(() => {
+        const provider = new firebase.auth.GoogleAuthProvider();
         firebase
           .auth()
           .signInWithPopup(provider)
