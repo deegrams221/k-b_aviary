@@ -8,6 +8,10 @@ body,
   background-color: #e6e6e6;
 }
 
+h1 {
+  margin-top: 0;
+}
+
 .header {
   display: flex;
   flex-direction: row;
@@ -35,10 +39,6 @@ body,
 }
 .links > .facebook {
   pointer-events: none;
-}
-
-.inventory-page > .selection {
-  max-width: 20rem;
 }
 
 .links > .facebook {

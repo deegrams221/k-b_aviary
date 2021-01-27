@@ -8,6 +8,7 @@ import {
   TextField,
 } from '@material-ui/core';
 import React, { useState } from 'react';
+import Logo from '../../images/logo1.jpg';
 
 export default function ContactForm() {
   const [open, setOpen] = useState(false);
@@ -43,6 +44,7 @@ export default function ContactForm() {
           >
             <div className='form-group'>
               <div className='form-row'>
+                <img src={Logo} alt='KB Aviary Logo' width={200} />
                 <DialogTitle id='form-dialog-title'>CONTACT US</DialogTitle>
                 <DialogContent>
                   <DialogContentText>

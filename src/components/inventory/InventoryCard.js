@@ -1,13 +1,14 @@
 import {
+  Button,
   Card,
-  // CardActions,
+  CardActions,
   CardContent,
   CardMedia,
   Typography,
 } from '@material-ui/core';
 import React, { useEffect, useState } from 'react';
-import firebase from '../../firebase';
-// import AdminEditCard from '../admin-pages/AdminEditCard';
+import { default as firebase } from '../../firebase';
+import AdminEditCard from '../admin-pages/AdminEditCard';
 
 // sorting
 const SORT_OPTIONS = {
@@ -35,14 +36,14 @@ const useInventory = (sortBy = 'TYPE_ASC') => {
   return inventory;
 };
 
-export default function InventoryCard() {
+export default function InventoryCard({ isLoggedIn }) {
   const [sortBy] = useState('TYPE_ASC');
   const inventory = useInventory(sortBy);
 
   // delete
-  // const deleteItem = (id) => {
-  //   firebase.firestore().collection('Inventory').doc(id).delete();
-  // };
+  const deleteItem = (id) => {
+    firebase.firestore().collection('Inventory').doc(id).delete();
+  };
 
   return (
     <>
@@ -71,16 +72,9 @@ export default function InventoryCard() {
                 {inventory.inventoryNum}
               </Typography>
             </CardContent>
-            {/* <CardActions>
-              {user === 'admin' &&
-              <AdminEditCard />
-              }
-              {user === 'admin' && (
-                <Button size='small' color='primary'>
-                  Update
-                </Button>
-              )}
-              {user === 'admin' && (
+            <CardActions>
+              {isLoggedIn && <AdminEditCard />}
+              {isLoggedIn && (
                 <Button
                   size='small'
                   color='secondary'
@@ -89,7 +83,7 @@ export default function InventoryCard() {
                   Delete
                 </Button>
               )}
-            </CardActions> */}
+            </CardActions>
           </Card>
         ))}
       </div>
