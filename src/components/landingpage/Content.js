@@ -2,6 +2,7 @@
 import Carousel from '@brainhubeu/react-carousel';
 import '@brainhubeu/react-carousel/lib/style.css';
 import React from 'react';
+import InventoryPage from '../inventory/InventoryPage';
 // import Icon from 'react-fa';
 import ContactForm from './ContactForm';
 import Vendors from './Vendors';
@@ -114,9 +115,8 @@ export default function Content() {
               </h3>
             </div>
             <div className='buttons'>
-              <div className='contact-button'>
-                <ContactForm />
-              </div>
+              <InventoryPage />
+              <ContactForm />
             </div>
           </div>
         </div>
