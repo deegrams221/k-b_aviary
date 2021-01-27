@@ -21,9 +21,10 @@ Single page webpage with the client provided information, and images. Contact fo
 
 ### Current version: 2.0
 
-The client would like to have a login, once logged in the client will be able to upload images and descriptions of the birds they have available for purchase in an 'inventory' page. Users will be able to view the inventory but will not be able to login. Also plan to create a backend in Firebase, so the client can easily upload and maintain the artifacts.
+The client can login through a private route, once logged in the client can upload images and descriptions of the birds they have available for purchase in an 'inventory' page. Users can view the inventory but will not be able to login. Created a backend in Firebase, so the client can easily upload and maintain their artifacts.
 
 ### Plan for version: 3.0
+
 Add a page for the client's verified customers to leave Reviews and Testimonials.
 
 ### Technology Used:
@@ -40,4 +41,3 @@ Deployed using `Netlify`
 - Client Login
 - Inventory Upload Form - Only accessible by the client
 - Inventory Delete Functionality - Only accessible by the client
-
