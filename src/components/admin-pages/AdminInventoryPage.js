@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import InventoryCard from '../inventory/InventoryCard';
+import AdminInventoryCard from './AdminInventoryCard';
 import AdminInventoryForm from './AdminInventoryForm';
 
 export default function AdminInventoryPage() {
@@ -10,7 +10,7 @@ export default function AdminInventoryPage() {
         <h1>Inventory</h1>
         <Link to='/'>Logout</Link>
         <AdminInventoryForm />
-        <InventoryCard />
+        <AdminInventoryCard />
       </div>
     </>
   );

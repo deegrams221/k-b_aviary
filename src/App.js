@@ -12,12 +12,13 @@ export const AuthContext = React.createContext(null);
 const App = () => {
   const [isLoggedIn, setLoggedIn] = useState(false);
 
-  function readSession() {
+  const readSession = () => {
     const user = window.sessionStorage.getItem(
       `firebase:authUser:${firebaseConfig.apiKey}:[DEFAULT]`
     );
     if (user) setLoggedIn(true);
-  }
+  };
+
   useEffect(() => {
     readSession();
   }, []);

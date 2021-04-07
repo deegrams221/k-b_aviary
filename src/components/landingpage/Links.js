@@ -17,7 +17,7 @@ export default function Links() {
         />
       </a>
       {/* Facebook */}
-      <a
+      {/* <a
         className='facebook'
         target='_blank'
         rel='noopener noreferrer'
@@ -28,7 +28,7 @@ export default function Links() {
           alt='follow me on facebook'
           src='https://c866088.ssl.cf3.rackcdn.com/assets/facebook30x30.png'
         />
-      </a>
+      </a> */}
       {/* Instagram */}
       <a
         className='instagram'
