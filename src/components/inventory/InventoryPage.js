@@ -31,7 +31,7 @@ export default function InventoryPage() {
           <div className='inventory-content'>
             <img src={Logo} alt='KB Aviary Logo' width={200} />
             <h1>Inventory</h1>
-            <h2>Coming Soon!</h2>
+            <h2>Currently Out of Stock</h2>
             <InventoryCard />
             <DialogActions>
               <Button onClick={handleClose} color='default'>
