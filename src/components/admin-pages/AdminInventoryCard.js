@@ -1,6 +1,15 @@
-import { Card, CardContent, CardMedia, Typography } from '@material-ui/core';
-import React, { useEffect, useState } from 'react';
+import {
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  CardMedia,
+  Typography,
+} from '@material-ui/core';
+import React, { useContext, useEffect, useState } from 'react';
+import { AuthContext } from '../../App';
 import { default as firebase } from '../../firebase';
+// import AdminEditCard from './AdminEditCard';
 
 // sorting
 const SORT_OPTIONS = {
@@ -28,9 +37,23 @@ const useInventory = (sortBy = 'TYPE_ASC') => {
   return inventory;
 };
 
-const InventoryCard = () => {
+const AdminInventoryCard = () => {
   const [sortBy] = useState('TYPE_ASC');
   const inventory = useInventory(sortBy);
+
+  const Auth = useContext(AuthContext);
+
+  // check if user is logged in
+  const loggedIn = () => {
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) Auth.setLoggedIn(true);
+    });
+  };
+
+  // delete
+  const deleteItem = (id) => {
+    firebase.firestore().collection('Inventory').doc(id).delete();
+  };
 
   return (
     <>
@@ -59,6 +82,18 @@ const InventoryCard = () => {
                 {inventory.inventoryNum}
               </Typography>
             </CardContent>
+            <CardActions>
+              {/* {loggedIn && <AdminEditCard />} */}
+              {loggedIn && (
+                <Button
+                  size='small'
+                  color='secondary'
+                  onClick={() => deleteItem(inventory.id)}
+                >
+                  Delete
+                </Button>
+              )}
+            </CardActions>
           </Card>
         ))}
       </div>
@@ -66,4 +101,4 @@ const InventoryCard = () => {
   );
 };
 
-export default InventoryCard;
+export default AdminInventoryCard;
