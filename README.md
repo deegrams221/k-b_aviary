@@ -1,6 +1,6 @@
 # K & B Aviary
 
-Find the deployed project at https://kbaviary.com/
+Find the deployed project at https://k-b-aviary.netlify.app/
 
 ## Diana Grams
 
