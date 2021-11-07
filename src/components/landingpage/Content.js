@@ -1,6 +1,8 @@
 // import Carousel, { arrowsPlugin } from '@brainhubeu/react-carousel';
-import Carousel from '@brainhubeu/react-carousel';
 import '@brainhubeu/react-carousel/lib/style.css';
+import { Splide, SplideSlide } from '@splidejs/react-splide';
+import '@splidejs/splide/dist/css/splide.min.css';
+// import '@splidejs/splide/dist/css/themes/splide-skyblue.min.css';
 import React from 'react';
 import InventoryPage from '../inventory/InventoryPage';
 // import Icon from 'react-fa';
@@ -16,7 +18,57 @@ export default function Content() {
           Cockatiels, Green Cheek Conures, Bourke's Parakeets, and Budgies
         </h2>
         <div className='carousel'>
-          <Carousel
+          <Splide>
+            <SplideSlide>
+              <img
+                src={require('../../images/cockatiel_babies.jpg')}
+                alt='Four baby Cockatiels'
+                loading='lazy'
+                height='300px'
+              />
+            </SplideSlide>
+            <SplideSlide>
+              <img
+                src={require('../../images/baby_bird.jpg')}
+                alt='Baby Conure being held'
+                loading='lazy'
+                height='300px'
+              />
+            </SplideSlide>
+            <SplideSlide>
+              <img
+                src={require('../../images/adult_lutino_cockatiel.jpg')}
+                alt='Adult Lutino Cockatiel'
+                loading='lazy'
+                height='300px'
+              />
+            </SplideSlide>
+            <SplideSlide>
+              <img
+                src={require('../../images/budgie.jpg')}
+                alt='Budgie sitting on a perch'
+                loading='lazy'
+                height='300px'
+              />
+            </SplideSlide>
+            <SplideSlide>
+              <img
+                src={require('../../images/cockatiel_pair2.jpg')}
+                alt='Two Adult Cockatiels'
+                loading='lazy'
+                height='300px'
+              />
+            </SplideSlide>
+            <SplideSlide>
+              <img
+                src={require('../../images/opaline_budgie.jpg')}
+                alt='Opaline Budgie sitting on a perch'
+                loading='lazy'
+                height='300px'
+              />
+            </SplideSlide>
+          </Splide>
+          {/* <Carousel
             clickToChange
             dots
             infinite
@@ -62,7 +114,7 @@ export default function Content() {
               loading='lazy'
               height='300px'
             />
-          </Carousel>
+          </Carousel> */}
         </div>
         <div className='about'>
           <p>
