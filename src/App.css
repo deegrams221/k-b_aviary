@@ -37,8 +37,10 @@ h1 {
   font-size: 18px;
   margin: 0 0.5rem;
 }
-.links > .facebook {
-  pointer-events: none;
+
+.links > a > img {
+  max-width: 50px;
+  max-height: 50px;
 }
 
 #content > h1 {

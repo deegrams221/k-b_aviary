@@ -11,7 +11,7 @@ export default function Content() {
   return (
     <>
       <div id='content'>
-        <h1>Small Hobby Bird Breeder in Lawrenceville, Georgia</h1>
+        <h1>Small Hobby Bird Breeder in Demorest, Georgia</h1>
         <h2>
           Cockatiels, Green Cheek Conures, Bourke's Parakeets, and Budgies
         </h2>

@@ -16,19 +16,6 @@ export default function Links() {
           src='https://c866088.ssl.cf3.rackcdn.com/assets/twitter30x30.png'
         />
       </a>
-      {/* Facebook */}
-      {/* <a
-        className='facebook'
-        target='_blank'
-        rel='noopener noreferrer'
-        title='follow me on facebook'
-        href='https://www.facebook.com/PLACEHOLDER'
-      >
-        <img
-          alt='follow me on facebook'
-          src='https://c866088.ssl.cf3.rackcdn.com/assets/facebook30x30.png'
-        />
-      </a> */}
       {/* Instagram */}
       <a
         className='instagram'
@@ -40,6 +27,19 @@ export default function Links() {
         <img
           alt='follow me on instagram'
           src='https://c866088.ssl.cf3.rackcdn.com/assets/instagram30x30.png'
+        />
+      </a>
+      {/* Google */}
+      <a
+        className='google-business'
+        target='_blank'
+        rel='noopener noreferrer'
+        title='follow me on google-business'
+        href='https://g.page/r/Cea2PdAcWHafEBA'
+      >
+        <img
+          alt='follow me on google-business'
+          src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWUwKOKGJv8nkQkOgnGJAnKjvv_KmVzSKqWQ&usqp=CAU'
         />
       </a>
     </div>
